@@ -7,38 +7,65 @@ import { Fragment, useState } from 'react';
 
 const NewsSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedNews, setSelectedNews] = useState<any>(null);
 
   const featuredNews = {
+    id: 'featured-1',
     title: "Kolektivni godišnji odmor",
     date: "18. juli 2025.",
     author: "FIT Mostar",
     category: "Obavještenja",
     readTime: "1 min",
-    description: "Kolektivni godišnji odmor na Fakultetu informacijskih tehnologija Univerziteta „Džemal Bijedić“ u Mostaru počinje u ponedjeljak, 21.7.2025. godine.",
-    fullContent: "Kolektivni godišnji odmor na Fakultetu informacijskih tehnologija Univerziteta „Džemal Bijedić“ u Mostaru počinje u ponedjeljak, 21.7.2025. godine. Obavještavamo studente da Fakultet neće raditi do 18.8.2025. godine. PRIJATAN ODMOR SVIMA!",
+    description: "Kolektivni godišnji odmor na Fakultetu informacijskih tehnologija Univerziteta \"Džemal Bijedić\" u Mostaru počinje u ponedjeljak, 21.7.2025. godine.",
+    fullContent: "Kolektivni godišnji odmor na Fakultetu informacijskih tehnologija Univerziteta \"Džemal Bijedić\" u Mostaru počinje u ponedjeljak, 21.7.2025. godine. Obavještavamo studente da Fakultet neće raditi do 18.8.2025. godine. PRIJATAN ODMOR SVIMA!",
     image: "/images/fit1.png"
   };
 
   const recentNews = [
     {
+      id: 'recent-1',
       title: "Obavještenje o upisu primljenih kandidata u prvu godinu I ciklusa studija u ak. 2025/2026 godini",
       date: "11. juli 2025.",
+      author: "FIT Mostar",
       category: "Obavještenja",
+      readTime: "2 min",
+      description: "Obavještavamo sve primljene kandidate o procedurama upisa za akademsku 2025/2026 godinu.",
+      fullContent: "Obavještavamo sve primljene kandidate da se upis u prvu godinu I ciklusa studija za akademsku 2025/2026 godinu vrši prema objavljenoj konačnoj rang listi.\n\nKandidati su dužni da se jave u sekretarijat fakulteta u terminu od 15. do 25. jula 2025. godine sa potrebnom dokumentacijom.",
       image: "/images/fit2.jpg"
     },
     {
+      id: 'recent-2',
       title: "Konačna rang lista za upis primljenih kandidata u prvu godinu I ciklusa studija (ak. 2025/2026)",
       date: "10. juli 2025.",
+      author: "FIT Mostar",
       category: "Upis",
+      readTime: "1 min",
+      description: "Objavljena je konačna rang lista za upis kandidata u prvu godinu prvog ciklusa studija.",
+      fullContent: "Konačna rang lista za upis primljenih kandidata u prvu godinu I ciklusa studija za akademsku 2025/2026 godinu je objavljena.\n\nLista je dostupna na zvaničnoj web stranici fakulteta i na oglasnoj tabli.\n\nKandidati koji se nalaze na listi mogu pristupiti upisu u određenom terminu. Za sve dodatne informacije obratite se sekretarijatu fakulteta.",
       image: "/images/fit4.jpg"
     },
     {
+      id: 'recent-3',
       title: "Konkurs za izbor saradnika u zvanje asistent",
       date: "13. januar 2025.",
+      author: "FIT Mostar",
       category: "Konkurs",
+      readTime: "3 min",
+      description: "Otvoren je konkurs za izbor saradnika u zvanje asistent na Fakultetu informacijskih tehnologija.",
+      fullContent: "Fakultet informacijskih tehnologija Univerziteta \"Džemal Bijedić\" u Mostaru raspisuje konkurs za izbor saradnika u zvanje asistent za nastavni predmet iz oblasti informacijskih tehnologija.\n\nUslovi konkursa:\n- Završen II ciklus studija (master/magistar) iz relevantne oblasti\n- Prosjek ocjena min. 8,00\n- Poznavanje engleskog jezika\n\nPrijave se podnose do 15. februara 2025. godine u sekretarijatu fakulteta.",
       image: "/images/fit3.jpg"
     }
   ];
+
+  const handleOpenModal = (news: any) => {
+    setSelectedNews(news);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedNews(null);
+  };
 
   return (
     <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
@@ -63,7 +90,7 @@ const NewsSection = () => {
           </motion.div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
             Pratite najnovije{' '}
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-blue-600 to-blue-800">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-blue-600 to-blue-800">
               događaje
             </span>
           </h2>
@@ -137,7 +164,7 @@ const NewsSection = () => {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  onClick={() => setIsModalOpen(true)}
+                  onClick={() => handleOpenModal(featuredNews)}
                   className="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold group text-lg"
                 >
                   Pročitaj više
@@ -158,13 +185,13 @@ const NewsSection = () => {
         >
           {recentNews.map((news, index) => (
             <motion.div
-              key={news.title}
+              key={news.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ y: -8 }}
-              className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group"
+              className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group flex flex-col h-full"
             >
               <div className="relative h-48 overflow-hidden">
                 <img
@@ -179,18 +206,19 @@ const NewsSection = () => {
                   </span>
                 </div>
               </div>
-              <div className="p-6">
+              <div className="p-6 flex flex-col flex-grow">
                 <div className="flex items-center text-gray-500 mb-3">
                   <Calendar className="w-3 h-3 mr-2" />
                   <span className="text-xs font-medium">{news.date}</span>
                 </div>
-                <h4 className="text-lg font-bold text-gray-900 mb-3 leading-tight group-hover:text-blue-600 transition-colors">
+                <h4 className="text-lg font-bold text-gray-900 mb-3 leading-tight group-hover:text-blue-600 transition-colors flex-grow">
                   {news.title}
                 </h4>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium text-sm group"
+                  onClick={() => handleOpenModal(news)}
+                  className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium text-sm group mt-auto"
                 >
                   Pročitaj više
                   <ArrowRight className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
@@ -222,7 +250,7 @@ const NewsSection = () => {
 
       {/* News Modal */}
       <Transition appear show={isModalOpen} as={Fragment}>
-        <Dialog as="div" className="relative z-50" onClose={() => setIsModalOpen(false)}>
+        <Dialog as="div" className="relative z-50" onClose={handleCloseModal}>
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -247,55 +275,59 @@ const NewsSection = () => {
                 leaveTo="opacity-0 scale-95"
               >
                 <Dialog.Panel className="w-full max-w-4xl transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-                  <div className="relative">
-                    <img
-                      src={featuredNews.image}
-                      alt={featuredNews.title}
-                      className="w-full h-64 object-cover rounded-xl mb-6"
-                    />
-                    <div className="absolute top-6 left-6">
-                      <span className="inline-flex items-center px-3 py-1 bg-white/90 backdrop-blur-sm text-gray-800 text-sm font-medium rounded-full">
-                        {featuredNews.category}
-                      </span>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center text-gray-500 mb-4 space-x-4">
-                    <div className="flex items-center">
-                      <Calendar className="w-4 h-4 mr-2" />
-                      <span className="text-sm font-medium">{featuredNews.date}</span>
-                    </div>
-                    <div className="flex items-center">
-                      <User className="w-4 h-4 mr-2" />
-                      <span className="text-sm font-medium">{featuredNews.author}</span>
-                    </div>
-                    <div className="flex items-center">
-                      <Clock className="w-4 h-4 mr-2" />
-                      <span className="text-sm font-medium">{featuredNews.readTime}</span>
-                    </div>
-                  </div>
+                  {selectedNews && (
+                    <>
+                      <div className="relative">
+                        <img
+                          src={selectedNews.image}
+                          alt={selectedNews.title}
+                          className="w-full h-64 object-cover rounded-xl mb-6"
+                        />
+                        <div className="absolute top-6 left-6">
+                          <span className="inline-flex items-center px-3 py-1 bg-white/90 backdrop-blur-sm text-gray-800 text-sm font-medium rounded-full">
+                            {selectedNews.category}
+                          </span>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-center text-gray-500 mb-4 space-x-4">
+                        <div className="flex items-center">
+                          <Calendar className="w-4 h-4 mr-2" />
+                          <span className="text-sm font-medium">{selectedNews.date}</span>
+                        </div>
+                        <div className="flex items-center">
+                          <User className="w-4 h-4 mr-2" />
+                          <span className="text-sm font-medium">{selectedNews.author || 'FIT Mostar'}</span>
+                        </div>
+                        <div className="flex items-center">
+                          <Clock className="w-4 h-4 mr-2" />
+                          <span className="text-sm font-medium">{selectedNews.readTime || '2 min'}</span>
+                        </div>
+                      </div>
 
-                  <Dialog.Title
-                    as="h3"
-                    className="text-2xl font-bold text-gray-900 mb-4"
-                  >
-                    {featuredNews.title}
-                  </Dialog.Title>
+                      <Dialog.Title
+                        as="h3"
+                        className="text-2xl font-bold text-gray-900 mb-4"
+                      >
+                        {selectedNews.title}
+                      </Dialog.Title>
 
-                  <div className="text-gray-600 leading-relaxed whitespace-pre-line">
-                    {featuredNews.fullContent}
-                  </div>
+                      <div className="text-gray-600 leading-relaxed whitespace-pre-line">
+                        {selectedNews.fullContent}
+                      </div>
 
-                  <div className="mt-6 flex justify-end">
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="inline-flex justify-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                      onClick={() => setIsModalOpen(false)}
-                    >
-                      Zatvori
-                    </motion.button>
-                  </div>
+                      <div className="mt-6 flex justify-end">
+                        <motion.button
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          className="inline-flex justify-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                          onClick={handleCloseModal}
+                        >
+                          Zatvori
+                        </motion.button>
+                      </div>
+                    </>
+                  )}
                 </Dialog.Panel>
               </Transition.Child>
             </div>

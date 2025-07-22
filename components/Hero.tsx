@@ -2,17 +2,45 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, Play, Users, Award, BookOpen } from 'lucide-react';
-import { useRef } from 'react';
+import { useRef, useEffect, useState } from 'react';
 
 const Hero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+  
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"]
   });
 
+  // Check if device is mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  
+  // Main content opacity (title, subtitle, buttons)
+  const mainContentOpacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
+  
+  // Desktop stats opacity
+  const desktopStatsOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
+  
+  // Mobile-specific stats visibility - much longer visibility range
+  const mobileStatsOpacity = useTransform(
+    scrollYProgress, 
+    [0, 0.1, 0.9], 
+    [0, 1, 1]
+  );
+  
+
 
   const stats = [
     { icon: Users, value: "2000+", label: "Studenata" },
@@ -21,7 +49,7 @@ const Hero = () => {
   ];
 
   return (
-    <section ref={containerRef} className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <section ref={containerRef} className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-16 md:pb-8">
       {/* Background Image with Parallax */}
       <motion.div 
         style={{ y }}
@@ -43,12 +71,12 @@ const Hero = () => {
         </div>
       </motion.div>
 
-      {/* Content */}
-      <motion.div 
-        style={{ opacity }}
-        className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-8"
-      >
-        <div className="max-w-5xl mx-auto">
+      {/* Main Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-8">
+        <motion.div 
+          style={{ opacity: mainContentOpacity }}
+          className="max-w-5xl mx-auto"
+        >
           {/* Badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -67,7 +95,8 @@ const Hero = () => {
             transition={{ duration: 1, delay: 0.4 }}
             className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-8 leading-tight"
           >
-            Dobrodošli na{' '}
+            Dobrodošli na
+            <br />
             <span className="text-transparent bg-clip-text text-yellow-400 drop-shadow-md animate-gradient-x">
               Fakultet informacijskih tehnologija
             </span>
@@ -78,7 +107,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-xl md:text-2xl lg:text-3xl text-gray-200 mb-12 max-w-4xl mx-auto leading-relaxed font-light"
+            className="text-lg md:text-2xl lg:text-3xl text-gray-200 mb-12 max-w-4xl mx-auto leading-relaxed font-light"
           >
             Budućnost počinje ovdje. Savremeni studij prilagođen digitalnom dobu.
           </motion.p>
@@ -88,7 +117,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 md:mb-32"
           >
             <motion.a
               href="/fakultet"
@@ -113,55 +142,35 @@ const Hero = () => {
               Promo video
             </motion.a>
           </motion.div>
-
-          {/* Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto"
-          >
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1.2 + index * 0.1 }}
-                className="text-center"
-              >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-white/10 backdrop-blur-sm rounded-full mb-4">
-                  <stat.icon className="w-8 h-8 text-white" />
-                </div>
-                <div className="text-3xl font-bold text-white mb-2">{stat.value}</div>
-                <div className="text-gray-300 font-medium">{stat.label}</div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </motion.div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
-      >
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="flex flex-col items-center text-white/60"
-        >
-          <span className="text-sm font-medium mb-2">Skrolujte za više</span>
-          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-            <motion.div
-              animate={{ y: [0, 12, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-              className="w-1 h-3 bg-white/60 rounded-full mt-2"
-            />
-          </div>
         </motion.div>
-      </motion.div>
+
+        {/* Stats - Separate opacity control for better mobile experience */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1 }}
+          style={{ opacity: isMobile ? mobileStatsOpacity : desktopStatsOpacity }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 max-w-4xl mx-auto"
+        >
+          {stats.map((stat, index) => (
+            <motion.div
+              key={stat.label}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.2 + index * 0.1 }}
+              className="text-center px-4"
+            >
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-white/10 backdrop-blur-sm rounded-full mb-4">
+                <stat.icon className="w-8 h-8 text-white" />
+              </div>
+              <div className="text-3xl md:text-4xl font-bold text-white mb-2">{stat.value}</div>
+              <div className="text-gray-300 font-medium text-sm md:text-base leading-tight">{stat.label}</div>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+
+
 
       {/* Floating Elements */}
       <motion.div
