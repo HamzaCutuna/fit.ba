@@ -1,0 +1,42 @@
+{
+  "common": {
+    "home": "Home",
+    "about": "About",
+    "faculty": "Faculty",
+    "studies": "Studies",
+    "staff": "Staff",
+    "news": "News",
+    "contact": "Contact",
+    "enrollment": "Enrollment",
+    "language": "Language",
+    "readMore": "Read more",
+    "close": "Close",
+    "loading": "Loading...",
+    "error": "Error"
+  },
+  "hero": {
+    "badge": "Discover our faculty",
+    "welcome": "Welcome to",
+    "title": "Faculty of Information Technology",
+    "subtitle": "University \"Džemal Bijedić\" in Mostar",
+    "description": "The future starts here. Modern studies adapted to the digital age.",
+    "cta": "Learn more",
+    "enrollNow": "Enroll now",
+    "promoVideo": "Promo video"
+  },
+  "news": {
+    "title": "Latest news",
+    "subtitle": "Follow the latest events",
+    "description": "Stay up to date with the latest announcements, events and achievements of our faculty",
+    "viewAll": "View all news",
+    "featuredNews": "Featured news",
+    "recentNews": "Recent news"
+  },
+  "footer": {
+    "description": "Faculty of Information Technology is a leading educational institution in the field of IT in Bosnia and Herzegovina.",
+    "quickLinks": "Quick links",
+    "contact": "Contact",
+    "followUs": "Follow us",
+    "allRightsReserved": "All rights reserved"
+  }
+} 

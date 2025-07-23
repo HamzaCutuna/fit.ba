@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, Play, Users, Award, BookOpen } from 'lucide-react';
 import { useRef, useEffect, useState } from 'react';
+import { useTranslation } from '../contexts/LanguageContext';
 
 const Hero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -48,6 +49,8 @@ const Hero = () => {
     { icon: BookOpen, value: "2", label: "Studijska programa" },
   ];
 
+  const { t } = useTranslation();
+
   return (
     <section ref={containerRef} className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-16 md:pb-8">
       {/* Background Image with Parallax */}
@@ -85,7 +88,7 @@ const Hero = () => {
             className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white text-sm font-medium mb-8"
           >
             <Play className="w-4 h-4 mr-2" />
-            Upoznajte naš fakultet
+            {t('hero.badge') || 'Upoznajte naš fakultet'}
           </motion.div>
 
           {/* Main Heading */}
@@ -95,10 +98,10 @@ const Hero = () => {
             transition={{ duration: 1, delay: 0.4 }}
             className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-8 leading-tight"
           >
-            Dobrodošli na
+            {t('hero.welcome') || 'Dobrodošli na'}
             <br />
             <span className="text-transparent bg-clip-text text-yellow-400 drop-shadow-md animate-gradient-x">
-              Fakultet informacijskih tehnologija
+              {t('hero.title')}
             </span>
           </motion.h1>
 
@@ -109,7 +112,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-lg md:text-2xl lg:text-3xl text-gray-200 mb-12 max-w-4xl mx-auto leading-relaxed font-light"
           >
-            Budućnost počinje ovdje. Savremeni studij prilagođen digitalnom dobu.
+            {t('hero.description')}
           </motion.p>
 
           {/* CTA Buttons */}
@@ -126,7 +129,7 @@ const Hero = () => {
               whileTap={{ scale: 0.95 }}
               className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-white to-white text-black font-semibold text-lg rounded-full shadow-2xl hover:shadow-blue-500/25 transition-all duration-300"
             >
-              Saznaj više
+              {t('hero.cta')}
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </motion.a>
             
@@ -139,7 +142,7 @@ const Hero = () => {
               className="group inline-flex items-center px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold text-lg rounded-full hover:bg-white/20 transition-all duration-300"
             >
               <Play className="mr-2 w-5 h-5" />
-              Promo video
+              {t('hero.promoVideo') || 'Promo video'}
             </motion.a>
           </motion.div>
         </motion.div>

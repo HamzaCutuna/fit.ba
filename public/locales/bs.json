@@ -1,0 +1,42 @@
+{
+  "common": {
+    "home": "Početna",
+    "about": "O nama",
+    "faculty": "Fakultet",
+    "studies": "Studij",
+    "staff": "Osoblje",
+    "news": "Vijesti",
+    "contact": "Kontakt",
+    "enrollment": "Upis",
+    "language": "Jezik",
+    "readMore": "Pročitaj više",
+    "close": "Zatvori",
+    "loading": "Učitavanje...",
+    "error": "Greška"
+  },
+  "hero": {
+    "badge": "Upoznajte naš fakultet",
+    "welcome": "Dobrodošli na",
+    "title": "Fakultet informacijskih tehnologija",
+    "subtitle": "Univerzitet \"Džemal Bijedić\" u Mostaru",
+    "description": "Budućnost počinje ovdje. Savremeni studij prilagođen digitalnom dobu.",
+    "cta": "Saznaj više",
+    "enrollNow": "Upiši se sada",
+    "promoVideo": "Promo video"
+  },
+  "news": {
+    "title": "Najnovije vijesti",
+    "subtitle": "Pratite najnovije događaje",
+    "description": "Budite u toku sa najnovijim obavještenjima, događajima i dostignućima našeg fakulteta",
+    "viewAll": "Pogledaj sve vijesti",
+    "featuredNews": "Istaknute vijesti",
+    "recentNews": "Nedavne vijesti"
+  },
+  "footer": {
+    "description": "Fakultet informacijskih tehnologija je vodeća obrazovna institucija u oblasti IT-ja u Bosni i Hercegovini.",
+    "quickLinks": "Brzi linkovi",
+    "contact": "Kontakt",
+    "followUs": "Pratite nas",
+    "allRightsReserved": "Sva prava zadržana"
+  }
+} 

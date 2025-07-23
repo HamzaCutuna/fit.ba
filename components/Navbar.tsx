@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { Transition } from '@headlessui/react';
 import Link from 'next/link';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -188,6 +189,7 @@ const Navbar = () => {
                   )}
                 </motion.div>
               ))}
+              <LanguageSwitcher isScrolled={isScrolled} />
             </div>
           </div>
 

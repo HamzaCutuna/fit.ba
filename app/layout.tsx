@@ -3,6 +3,7 @@ import { Manrope, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Analytics from "./analytics";
 import PerformanceOptimizer from "../components/PerformanceOptimizer";
+import { LanguageProvider } from "../contexts/LanguageContext";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -203,7 +204,9 @@ export default function RootLayout({
       <body
         className={`${manrope.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
         <Analytics />
         <PerformanceOptimizer />
       </body>

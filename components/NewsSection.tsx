@@ -4,10 +4,24 @@ import { motion } from 'framer-motion';
 import { Calendar, ArrowRight, Clock, User, Tag } from 'lucide-react';
 import { Dialog, Transition } from '@headlessui/react';
 import { Fragment, useState } from 'react';
+import { useTranslation } from '../contexts/LanguageContext';
+
+interface NewsItem {
+  id: string;
+  title: string;
+  date: string;
+  author: string;
+  category: string;
+  readTime: string;
+  description: string;
+  fullContent: string;
+  image: string;
+}
 
 const NewsSection = () => {
+  const { t } = useTranslation();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedNews, setSelectedNews] = useState<any>(null);
+  const [selectedNews, setSelectedNews] = useState<NewsItem | null>(null);
 
   const featuredNews = {
     id: 'featured-1',
@@ -57,7 +71,7 @@ const NewsSection = () => {
     }
   ];
 
-  const handleOpenModal = (news: any) => {
+  const handleOpenModal = (news: NewsItem) => {
     setSelectedNews(news);
     setIsModalOpen(true);
   };
@@ -86,16 +100,16 @@ const NewsSection = () => {
             className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium mb-6"
           >
             <Tag className="w-4 h-4 mr-2" />
-            Najnovije vijesti
+            {t('news.title')}
           </motion.div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-            Pratite najnovije{' '}
+            {t('news.subtitle').split(' ').slice(0, 2).join(' ')}{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-blue-600 to-blue-800">
-              događaje
+              {t('news.subtitle').split(' ').slice(2).join(' ')}
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Budite u toku sa najnovijim obavještenjima, događajima i dostignućima našeg fakulteta
+            {t('news.description')}
           </p>
         </motion.div>
 
@@ -167,7 +181,7 @@ const NewsSection = () => {
                   onClick={() => handleOpenModal(featuredNews)}
                   className="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold group text-lg"
                 >
-                  Pročitaj više
+                  {t('common.readMore')}
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </motion.button>
               </motion.div>
@@ -220,7 +234,7 @@ const NewsSection = () => {
                   onClick={() => handleOpenModal(news)}
                   className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium text-sm group mt-auto"
                 >
-                  Pročitaj više
+                  {t('common.readMore')}
                   <ArrowRight className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                 </motion.button>
               </div>
@@ -242,7 +256,7 @@ const NewsSection = () => {
             whileTap={{ scale: 0.95 }}
             className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-800 text-white font-semibold text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 group"
           >
-            Pogledaj sve vijesti
+            {t('news.viewAll')}
             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
           </motion.a>
         </motion.div>
@@ -323,7 +337,7 @@ const NewsSection = () => {
                           className="inline-flex justify-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           onClick={handleCloseModal}
                         >
-                          Zatvori
+                          {t('common.close')}
                         </motion.button>
                       </div>
                     </>
