@@ -4,8 +4,10 @@ import { motion } from 'framer-motion';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import { Award, Globe, Building2, Laptop, Monitor } from 'lucide-react';
+import { useTranslation } from '../../contexts/LanguageContext';
 
 export default function FakultetPage() {
+  const { t } = useTranslation();
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
@@ -25,11 +27,10 @@ export default function FakultetPage() {
             className="text-center"
           >
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-              O Fakultetu
+              {t('facultyPage.title')}
             </h1>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
-              Fakultet informacijskih tehnologija je članica javnog Univerziteta &quot;Džemal Bijedić&quot; u Mostaru, 
-              posvećena izvrsnosti u nastavi, istraživanju i inovacijama.
+              {t('facultyPage.subtitle')}
             </p>
           </motion.div>
         </div>
@@ -53,25 +54,22 @@ export default function FakultetPage() {
                     <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center">
                       <Building2 className="w-6 h-6 text-white" />
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-900">Osnovne informacije</h3>
+                    <h3 className="text-2xl font-bold text-gray-900">{t('facultyPage.basicInfo.title')}</h3>
                   </div>
                   <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                    Fakultet informacijskih tehnologija (FIT) je članica javnog Univerziteta &quot;Džemal Bijedić&quot; u Mostaru. 
-                    Osnovan je 1997. godine kao dvogodišnji Studij informatike, a 2003. godine je preregistrovan u Fakultet. 
-                    FIT organizuje Bachelor (prvi ciklus) i Master (drugi ciklus) studij u oblasti informacijskih tehnologija. 
-                    Nastavni plan i program se realizuje u skladu sa principima Bolonjske deklaracije.
+                    {t('facultyPage.basicInfo.content1')}
                   </p>
                   <p className="text-lg text-gray-700 leading-relaxed">
-                    Prvi ciklus se organizuje i realizuje na dva načina:
+                    {t('facultyPage.basicInfo.content2')}
                   </p>
                   <ul className="mt-4 space-y-2">
                     <li className="flex items-start space-x-3">
                       <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <span className="text-gray-700">klasični, tzv. in-class sistem</span>
+                      <span className="text-gray-700">{t('facultyPage.basicInfo.inClass')}</span>
                     </li>
                     <li className="flex items-start space-x-3">
                       <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <span className="text-gray-700">sistem učenja na daljinu, tzv. DistanceLearning – DL</span>
+                      <span className="text-gray-700">{t('facultyPage.basicInfo.distanceLearning')}</span>
                     </li>
                   </ul>
                 </div>
@@ -99,16 +97,13 @@ export default function FakultetPage() {
                     <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
                       <Laptop className="w-6 h-6 text-white" />
                     </div>
-                    <h3 className="text-2xl font-bold">Distance Learning - Prvenstvo u BiH</h3>
+                    <h3 className="text-2xl font-bold">{t('facultyPage.distanceLearning.title')}</h3>
                   </div>
                   <p className="text-lg leading-relaxed mb-6">
-                    FIT je institucija koja je prva uvela koncept studiranja na daljinu u Bosni i Hercegovini i ima 
-                    vodeću ulogu u procesu implementacije i razvoja učenja na daljinu u našoj zemlji.
+                    {t('facultyPage.distanceLearning.content1')}
                   </p>
                   <p className="text-lg leading-relaxed">
-                    Na Fakultetu postoje četiri kabineta sa preko stotinu računarskih mjesta i četiri laboratorije. 
-                    Osim redovnih nastavnih aktivnosti, studenti i nastavno osoblje imaju mogućnost izvođenja različitih 
-                    istraživanja u pomenutim kabinetima i laboratorijama.
+                    {t('facultyPage.distanceLearning.content2')}
                   </p>
                 </div>
                 <div className="relative h-64 lg:h-auto">
@@ -142,16 +137,13 @@ export default function FakultetPage() {
                     <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-600 rounded-lg flex items-center justify-center">
                       <Award className="w-6 h-6 text-white" />
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-900">Kvalitet i zaposlenost</h3>
+                    <h3 className="text-2xl font-bold text-gray-900">{t('facultyPage.quality.title')}</h3>
                   </div>
                   <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                    Kvalitet i praktična relevantnost studijskog programa su potvrđeni činjenicom da je, prema podacima 
-                    Zavoda za statistiku, 95% naših studenata zaposleno. IT sektor predstavlja područje koje se dinamično 
-                    razvija i postoji stalna potreba za ovim kadrom u Bosni i Hercegovini i u svijetu.
+                    {t('facultyPage.quality.content1')}
                   </p>
                   <p className="text-lg text-gray-700 leading-relaxed">
-                    FIT provodi periodična istraživanja u cilju analize usklađenosti kvalifikacija i vještina predviđenih 
-                    nastavnim planom i programom sa potrebama i zahtjevima tržišta i okruženja.
+                    {t('facultyPage.quality.content2')}
                   </p>
                 </div>
               </div>
@@ -171,22 +163,16 @@ export default function FakultetPage() {
                     <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg flex items-center justify-center">
                       <Globe className="w-6 h-6 text-white" />
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-900">Saradnja i partnerstvo</h3>
+                    <h3 className="text-2xl font-bold text-gray-900">{t('facultyPage.collaboration.title')}</h3>
                   </div>
                   <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                    FIT ima veoma dobru saradnju sa državnim, federalnim i kantonalnim ministarstvima koja djeluju u 
-                    sektoru obrazovanja i IT-a, kao i sa regionalnim IT kompanijama.
+                    {t('facultyPage.collaboration.content1')}
                   </p>
                   <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                    Fakultet također ima veoma uspješnu međunarodnu saradnju, u prvom redu sa univerzitetima u Austriji 
-                    (FH Joanneum, Graz), Njemačkoj (Univerzitet u Paderbornu) i Španiji (Univerzitet u Lleidi), kao i sa 
-                    univerzitetima u Bosni i Hercegovini i regionu.
+                    {t('facultyPage.collaboration.content2')}
                   </p>
                   <p className="text-lg text-gray-700 leading-relaxed">
-                    Ova saradnja podrazumijeva realizaciju brojnih aktivnosti kao što su razmjena nastavnika i studenata, 
-                    realizacija zajedničkih naučno-istraživačkih projekata, učešće u seminarima i konferencijama, realizacija 
-                    programa stručnog usavršavanja, kao i druge aktivnosti kojima je svrha intenziviranje akademske saradnje. 
-                    FIT je učestvovao u velikom broju međunarodnih projekata, kao i projekata finansiranih iz državnih fondova.
+                    {t('facultyPage.collaboration.content3')}
                   </p>
                 </div>
                 <div className="relative h-64 lg:h-auto">
@@ -220,13 +206,10 @@ export default function FakultetPage() {
                     <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
                       <Monitor className="w-6 h-6 text-white" />
                     </div>
-                    <h3 className="text-2xl font-bold">Kontinuirano unapređenje</h3>
+                    <h3 className="text-2xl font-bold">{t('facultyPage.improvement.title')}</h3>
                   </div>
                   <p className="text-lg leading-relaxed">
-                    Fakultet kontinuirano radi na unapređenju kvaliteta svih aktivnosti: nastave, sadržaja nastavnog plana 
-                    i programa, sistema ocjenjivanja, udžbenika i literature, opremljenosti učioničkog i drugog prostora, 
-                    DL platforme, naučno-istraživačke djelatnosti, izdavačke djelatnosti, selekcije nastavnog kadra i 
-                    administrativnog osoblja, bibliotečke djelatnosti, cjeloživotnog obrazovanja i drugih standarda.
+                    {t('facultyPage.improvement.content')}
                   </p>
                 </div>
               </div>
@@ -245,7 +228,7 @@ export default function FakultetPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Riječ prvog dekana</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">{t('facultyPage.firstDean.title')}</h2>
             <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto"></div>
           </motion.div>
 
@@ -262,24 +245,24 @@ export default function FakultetPage() {
               
               <div className="relative z-10">
                 <div className="mb-8">
-                  <h3 className="text-2xl font-bold text-gray-900">prof. dr. sc. Safet Krkić</h3>
-                  <p className="text-blue-600 font-medium">Prvi dekan Fakulteta informacijskih tehnologija</p>
+                  <h3 className="text-2xl font-bold text-gray-900">{t('facultyPage.firstDean.name')}</h3>
+                  <p className="text-blue-600 font-medium">{t('facultyPage.firstDean.position')}</p>
                 </div>
                 
                 <blockquote className="text-lg text-gray-700 leading-relaxed mb-6 italic">
-                  &quot;Prepoznavajući i slijedeći stremljenja i želje mladih ljudi koji su planirali da svoje obrazovanje nastave na nekoj od visokoškolskih institucija našeg Univerziteta, 1996. godine pokrenuli smo inicijativu za formiranje Studija informatike pri Univerzitetu &quot;Džemal Bijedić&quot;. Nastavno-naučno vijeće je formiralo Komisiju kojoj je dalo u zadatak da sačini studiju izvodljivosti za osnivanje Studija informatike. Studija je potvrdila veliki interes mladih ljudi i pokazala opravdanost osnivanja dvogodišnjeg Studija informatike i potvrdila pretpostavke uspješnog rada i razvoja. Na tom osnovu je Savjet Univerziteta 10. oktobra 1997. godine donio odluku o osnivanju i početku rada nove visokoškolske institucije. Osnivanjem Studija informatike pri Univerzitetu udovoljili smo željama velikog broja mladih Bosne i Hercegovine, da u svojoj zemlji mogu sticati naobrazbu i iz oblasti informatike.&quot;
+                  &quot;{t('facultyPage.firstDean.quote')}&quot;
                 </blockquote>
                 
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  Dinamičan rast i razvoj Studija nametnuo je potrebu njegovog prerastanja u Fakultet informacijskih tehnologija. Nastavno-naučno vijeće i Savjet Univerziteta prihvatili su Studiju izvodljivosti koja je u tom smislu sačinjena. U skladu s tim je donesena i odluka, a kantonalni sud HN kantona je 17. februara 2003. godine izvršio sudsku registraciju te visokoškolske ustanove.
+                  {t('facultyPage.firstDean.content1')}
                 </p>
                 
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  Od početka smo shvatili da je dinamični razvoj informacijskih tehnologija moguće pratiti inoviranjem, dopunjavanjem i korekcijama Nastavnog plana i programa i uvođenjem novih metoda i novih oblika interakcije u nastavnom procesu. Tako smo, u deset godina našeg postojanja, šest puta mijenjali ili dopunjavali sadržaj Nastavnog plana i programa. Ozbiljnosti pristupa ovom poslu doprinijela je i naša angažiranost u TEMPUS projektu za izradu adekvatnog nastavnog plana i programa za obrazovanje informatičara. Takav trend razvoja curriculuma našeg Fakulteta nastavit ćemo i dalje.
+                  {t('facultyPage.firstDean.content2')}
                 </p>
 
                 <p className="text-gray-700 leading-relaxed">
-                  Od školske 2001/02. godine organizovali smo i distance learning (učenje na daljinu) način studiranja. Naši napori će u budućnosti biti više usmjereni u tom pravcu. Školske 2002/03. otpočeli smo i sa nastavom na postdiplomskom studiju i time zakoračili u strategiju rješavanja problema nedostatka kadrova.
+                  {t('facultyPage.firstDean.content3')}
                 </p>
               </div>
             </motion.div>

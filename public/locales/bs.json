@@ -14,6 +14,28 @@
     "loading": "Učitavanje...",
     "error": "Greška"
   },
+  "navbar": {
+    "faculty": "Fakultet",
+    "aboutFaculty": "O fakultetu",
+    "staff": "Osoblje",
+    "enrollment": "Upis",
+    "whatToEnroll": "Šta upisati?",
+    "studyMethods": "Načini studiranja",
+    "studyPrices": "Cijene studija",
+    "studies": "Studij",
+    "firstCycle": "I ciklus",
+    "studyRules": "Pravila studiranja",
+    "curriculumSoftwareDev": "Nastavni plan i program - Razvoj softvera",
+    "curriculumSoftwareEng": "Nastavni plan i program - Softverski inženjering",
+    "consultationTerms": "Termini konsultacija sa studentima",
+    "secondCycle": "II ciklus",
+    "curriculumOneYear": "Nastavni plan i program - jednogodišnji (60 ECTS)",
+    "curriculumTwoYear": "Nastavni plan i program za drugi ciklus - dvogodišnji (120 ECTS)",
+    "news": "Vijesti",
+    "contact": "Kontakt",
+    "logo": "Fakultet informacijskih tehnologija",
+    "logoShort": "FIT, Mostar"
+  },
   "hero": {
     "badge": "Upoznajte naš fakultet",
     "welcome": "Dobrodošli na",
@@ -22,7 +44,12 @@
     "description": "Budućnost počinje ovdje. Savremeni studij prilagođen digitalnom dobu.",
     "cta": "Saznaj više",
     "enrollNow": "Upiši se sada",
-    "promoVideo": "Promo video"
+    "promoVideo": "Promo video",
+    "stats": {
+      "students": "Studenata",
+      "experience": "Godina iskustva",
+      "programs": "Studijska programa"
+    }
   },
   "news": {
     "title": "Najnovije vijesti",
@@ -30,13 +57,359 @@
     "description": "Budite u toku sa najnovijim obavještenjima, događajima i dostignućima našeg fakulteta",
     "viewAll": "Pogledaj sve vijesti",
     "featuredNews": "Istaknute vijesti",
-    "recentNews": "Nedavne vijesti"
+    "recentNews": "Nedavne vijesti",
+    "categories": {
+      "announcements": "Obavještenja",
+      "enrollment": "Upis",
+      "competition": "Konkurs"
+    },
+    "items": {
+      "vacationTitle": "Kolektivni godišnji odmor",
+      "vacationExcerpt": "Kolektivni godišnji odmor na Fakultetu informacijskih tehnologija Univerziteta \"Džemal Bijedić\" u Mostaru počinje u ponedjeljak, 21.7.2025. godine.",
+      "enrollmentTitle": "Obavještenje o upisu primljenih kandidata u prvu godinu I ciklusa studija u ak. 2025/2026 godini",
+      "enrollmentExcerpt": "Obavještavamo sve primljene kandidate o procedurama upisa za akademsku 2025/2026 godinu.",
+      "rankListTitle": "Konačna rang lista za upis primljenih kandidata u prvu godinu I ciklusa studija (ak. 2025/2026)",
+      "rankListExcerpt": "Objavljena je konačna rang lista za upis kandidata u prvu godinu prvog ciklusa studija.",
+      "assistantTitle": "Konkurs za izbor saradnika u zvanje asistent",
+      "assistantExcerpt": "Otvoren je konkurs za izbor saradnika u zvanje asistent na Fakultetu informacijskih tehnologija."
+    }
   },
   "footer": {
-    "description": "Fakultet informacijskih tehnologija je vodeća obrazovna institucija u oblasti IT-ja u Bosni i Hercegovini.",
+    "description": "Fakultet informacijskih tehnologija je vodeća obrazovna institucija u oblasti informacijskih tehnologija u Bosni i Hercegovini.",
     "quickLinks": "Brzi linkovi",
+    "aboutFaculty": "O fakultetu",
+    "staff": "Osoblje",
+    "studies": "Studij",
+    "enrollment": "Upis",
+    "news": "Vijesti",
     "contact": "Kontakt",
+    "serviceInfo": "Servisne informacije",
+    "bankAccount": "Žiro račun Fakulteta",
+    "accountNumber": "1610000000291496",
+    "bank": "Raiffeisen Bank",
+    "address": "Adresa",
+    "phone": "Telefon",
+    "email": "Email",
+    "workingHours": "Radno vrijeme",
+    "workingHoursValue": "Pon-Pet: 08:00-16:00\nSubota: 11:00-13:00",
     "followUs": "Pratite nas",
-    "allRightsReserved": "Sva prava zadržana"
+    "allRightsReserved": "Sva prava zadržana",
+    "university": "Univerzitet \"Džemal Bijedić\"",
+    "location": "Sjeverni logor 12, 88000 Mostar"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Stupite u kontakt s nama. Naš tim je tu da vam pomogne u svim pitanjima vezanim za studij i fakultet.",
+    "location": "Lokacija",
+    "locationSubtitle": "Pronađite nas na našoj lokaciji u Mostaru",
+    "locationText": "Fakultet informacijskih tehnologija, Mostar, Bosna i Hercegovina",
+    "faq": "Često postavljena pitanja",
+    "faqSubtitle": "Odgovori na najčešća pitanja naših studenata",
+    "positions": {
+      "dean": "Dekan",
+      "viceDeanTeaching": "Prodekan za nastavu",
+      "viceDeanResearch": "Prodekan za naučno-istraživački rad",
+      "studentService": "Studentska služba",
+      "techSupport": "Tehnička podrška",
+      "dlwmsSupport": "DLWMS podrška"
+    },
+    "services": {
+      "office365": "Office 365 servis | Microsoft Imagine | Domena"
+    },
+    "workingHours": {
+      "studentService": "Pon-Pet 11h-14h"
+    },
+    "faqItems": [
+      {
+        "question": "Kako mogu kontaktirati studentsku službu?",
+        "answer": "Studentska služba je dostupna putem email-a na esluzba@edu.fit.ba ili telefonom na +38736/281-160. Radno vrijeme je ponedjeljak-petak od 11h do 14h."
+      },
+      {
+        "question": "Koji su načini plaćanja školarine?",
+        "answer": "Informacije o plaćanju školarine možete dobiti kontaktiranjem studentske službe ili prodekana za nastavu."
+      },
+      {
+        "question": "Kako mogu dobiti tehničku podršku?",
+        "answer": "Tehnička podrška je dostupna putem email-a na tehnicka.podrska@edu.fit.ba za sve pitanja vezana za Office 365, Microsoft Imagine i domenu."
+      },
+      {
+        "question": "Kada je radno vrijeme fakulteta?",
+        "answer": "Studentska služba radi ponedjeljak-petak od 11h do 14h. Za ostale službe, kontaktirajte direktno odgovorne osobe."
+      },
+      {
+        "question": "Kako mogu dobiti pristup DLWMS sistemu?",
+        "answer": "Za pristup DLWMS sistemu i tehničku podršku, kontaktirajte dlwms.podrska@edu.fit.ba."
+      },
+      {
+        "question": "Kako mogu zakazati sastanak s dekanom?",
+        "answer": "Za sastanak s dekanom prof. dr. Ninom Bijedić, kontaktirajte je direktno na nbijedic@edu.fit.ba ili telefonom +38736/281-172."
+      }
+    ]
+  },
+  "newsPage": {
+    "title": "Vijesti",
+    "subtitle": "Pratite najnovije obavještenja, događaje i dostignuća našeg fakulteta",
+    "badge": "Vijesti i obavještenja"
+  },
+  "months": {
+    "january": "januar",
+    "february": "februar",
+    "march": "mart",
+    "april": "april",
+    "may": "maj",
+    "june": "juni",
+    "july": "juli",
+    "august": "august",
+    "september": "septembar",
+    "october": "oktobar",
+    "november": "novembar",
+    "december": "decembar"
+  },
+  "facultyPage": {
+    "title": "O Fakultetu",
+    "subtitle": "Fakultet informacijskih tehnologija je članica javnog Univerziteta \"Džemal Bijedić\" u Mostaru, posvećena izvrsnosti u nastavi, istraživanju i inovacijama.",
+    "basicInfo": {
+      "title": "Osnovne informacije",
+      "content1": "Fakultet informacijskih tehnologija (FIT) je članica javnog Univerziteta \"Džemal Bijedić\" u Mostaru. Osnovan je 1997. godine kao dvogodišnji Studij informatike, a 2003. godine je preregistrovan u Fakultet. FIT organizuje Bachelor (prvi ciklus) i Master (drugi ciklus) studij u oblasti informacijskih tehnologija. Nastavni plan i program se realizuje u skladu sa principima Bolonjske deklaracije.",
+      "content2": "Prvi ciklus se organizuje i realizuje na dva načina:",
+      "inClass": "klasični, tzv. in-class sistem",
+      "distanceLearning": "sistem učenja na daljinu, tzv. DistanceLearning – DL"
+    },
+    "distanceLearning": {
+      "title": "Distance Learning - Prvenstvo u BiH",
+      "content1": "FIT je institucija koja je prva uvela koncept studiranja na daljinu u Bosni i Hercegovini i ima vodeću ulogu u procesu implementacije i razvoja učenja na daljinu u našoj zemlji.",
+      "content2": "Na Fakultetu postoje četiri kabineta sa preko stotinu računarskih mjesta i četiri laboratorije. Osim redovnih nastavnih aktivnosti, studenti i nastavno osoblje imaju mogućnost izvođenja različitih istraživanja u pomenutim kabinetima i laboratorijama."
+    },
+    "quality": {
+      "title": "Kvalitet i zaposlenost",
+      "content1": "Kvalitet i praktična relevantnost studijskog programa su potvrđeni činjenicom da je, prema podacima Zavoda za statistiku, 95% naših studenata zaposleno. IT sektor predstavlja područje koje se dinamično razvija i postoji stalna potreba za ovim kadrom u Bosni i Hercegovini i u svijetu.",
+      "content2": "FIT provodi periodična istraživanja u cilju analize usklađenosti kvalifikacija i vještina predviđenih nastavnim planom i programom sa potrebama i zahtjevima tržišta i okruženja."
+    },
+    "collaboration": {
+      "title": "Saradnja i partnerstvo",
+      "content1": "FIT ima veoma dobru saradnju sa državnim, federalnim i kantonalnim ministarstvima koja djeluju u sektoru obrazovanja i IT-a, kao i sa regionalnim IT kompanijama.",
+      "content2": "Fakultet također ima veoma uspješnu međunarodnu saradnju, u prvom redu sa univerzitetima u Austriji (FH Joanneum, Graz), Njemačkoj (Univerzitet u Paderbornu) i Španiji (Univerzitet u Lleidi), kao i sa univerzitetima u Bosni i Hercegovini i regionu.",
+      "content3": "Ova saradnja podrazumijeva realizaciju brojnih aktivnosti kao što su razmjena nastavnika i studenata, realizacija zajedničkih naučno-istraživačkih projekata, učešće u seminarima i konferencijama, realizacija programa stručnog usavršavanja, kao i druge aktivnosti kojima je svrha intenziviranje akademske saradnje. FIT je učestvovao u velikom broju međunarodnih projekata, kao i projekata finansiranih iz državnih fondova."
+    },
+    "improvement": {
+      "title": "Kontinuirano unapređenje",
+      "content": "Fakultet kontinuirano radi na unapređenju kvaliteta svih aktivnosti: nastave, sadržaja nastavnog plana i programa, sistema ocjenjivanja, udžbenika i literature, opremljenosti učioničkog i drugog prostora, DL platforme, naučno-istraživačke djelatnosti, izdavačke djelatnosti, selekcije nastavnog kadra i administrativnog osoblja, bibliotečke djelatnosti, cjeloživotnog obrazovanja i drugih standarda."
+    },
+    "firstDean": {
+      "title": "Riječ prvog dekana",
+      "name": "prof. dr. sc. Safet Krkić",
+      "position": "Prvi dekan Fakulteta informacijskih tehnologija",
+      "quote": "Prepoznavajući i slijedeći stremljenja i želje mladih ljudi koji su planirali da svoje obrazovanje nastave na nekoj od visokoškolskih institucija našeg Univerziteta, 1996. godine pokrenuli smo inicijativu za formiranje Studija informatike pri Univerzitetu \"Džemal Bijedić\". Nastavno-naučno vijeće je formiralo Komisiju kojoj je dalo u zadatak da sačini studiju izvodljivosti za osnivanje Studija informatike. Studija je potvrdila veliki interes mladih ljudi i pokazala opravdanost osnivanja dvogodišnjeg Studija informatike i potvrdila pretpostavke uspješnog rada i razvoja. Na tom osnovu je Savjet Univerziteta 10. oktobra 1997. godine donio odluku o osnivanju i početku rada nove visokoškolske institucije. Osnivanjem Studija informatike pri Univerzitetu udovoljili smo željama velikog broja mladih Bosne i Hercegovine, da u svojoj zemlji mogu sticati naobrazbu i iz oblasti informatike.",
+      "content1": "Dinamičan rast i razvoj Studija nametnuo je potrebu njegovog prerastanja u Fakultet informacijskih tehnologija. Nastavno-naučno vijeće i Savjet Univerziteta prihvatili su Studiju izvodljivosti koja je u tom smislu sačinjena. U skladu s tim je donesena i odluka, a kantonalni sud HN kantona je 17. februara 2003. godine izvršio sudsku registraciju te visokoškolske ustanove.",
+      "content2": "Od početka smo shvatili da je dinamični razvoj informacijskih tehnologija moguće pratiti inoviranjem, dopunjavanjem i korekcijama Nastavnog plana i programa i uvođenjem novih metoda i novih oblika interakcije u nastavnom procesu. Tako smo, u deset godina našeg postojanja, šest puta mijenjali ili dopunjavali sadržaj Nastavnog plana i programa. Ozbiljnosti pristupa ovom poslu doprinijela je i naša angažiranost u TEMPUS projektu za izradu adekvatnog nastavnog plana i programa za obrazovanje informatičara. Takav trend razvoja curriculuma našeg Fakulteta nastavit ćemo i dalje.",
+      "content3": "Od školske 2001/02. godine organizovali smo i distance learning (učenje na daljinu) način studiranja. Naši napori će u budućnosti biti više usmjereni u tom pravcu. Školske 2002/03. otpočeli smo i sa nastavom na postdiplomskom studiju i time zakoračili u strategiju rješavanja problema nedostatka kadrova."
+    }
+  },
+  "staffPage": {
+    "title": "Svo osoblje",
+    "subtitle": "Upoznajte naše stručno osoblje koje posvećeno obrazovanju novih generacija IT stručnjaka.",
+    "categories": {
+      "all": "Sve",
+      "faculty": "Nastavnici",
+      "associates": "Saradnici",
+      "administration": "Administracija"
+    },
+    "contact": {
+      "title": "Kontaktirajte nas",
+      "subtitle": "Imate pitanja o našem osoblju ili želite saznati više o našim programima? Slobodno nas kontaktirajte.",
+      "email": "Email",
+      "phone": "Telefon",
+      "address": "Adresa"
+    }
+  },
+  "studij": {
+    "dvogodisnji": {
+      "title": "Dvogodišnji master",
+      "subtitle": "Nastavni plan i program - II ciklus studija (120 ECTS)",
+      "planTitle": "Nastavni plan i program",
+      "planSubtitle": "Detaljan pregled predmeta za dvogodišnji master program (120 ECTS)",
+      "downloadSyllabus": "Preuzmi silabus",
+      "year1": "1. godina",
+      "year2": "2. godina",
+      "semester": "semestar",
+      "totalEcts": "Ukupno ECTS",
+      "elective": "Izborni",
+      "mandatory": "Obavezni",
+      "subject": "Predmet",
+      "totalEctsFor": "Ukupno ECTS za",
+      "masterProgram": "Dvogodišnji master program",
+      "distributedSemesters": "Raspoređeno kroz 4 semestra (2 godine studija)",
+      "electiveCoursesNotes": "Napomene o izbornim predmetima",
+      "electiveNote": "Napomena: Studenti biraju jedan izborni predmet po semestru gdje su dostupni."
+    },
+    "jednogodisnji": {
+      "title": "Jednogodišnji master",
+      "subtitle": "Nastavni plan i program - II ciklus studija (60 ECTS)",
+      "planTitle": "Nastavni plan i program",
+      "planSubtitle": "Detaljan pregled predmeta za jednogodišnji master program (60 ECTS)",
+      "downloadSyllabus": "Preuzmi silabus",
+      "year1": "1. godina",
+      "semester": "Semestar",
+      "subject": "Predmet",
+      "elective": "Izborni",
+      "totalEcts": "Ukupno ECTS",
+      "totalEctsFor": "Ukupno ECTS za",
+      "masterProgram": "Jednogodišnji master program",
+      "distributedSemesters": "Raspoređeno kroz 2 semestra (1 godina studija)",
+      "yes": "Da",
+      "no": "Ne"
+    },
+         "razvoj-softvera": {
+       "title": "Razvoj softvera",
+       "subtitle": "Nastavni plan i program - I ciklus studija",
+       "planTitle": "Nastavni plan i program",
+       "planSubtitle": "Detaljan pregled predmeta za sve tri godine studija programa Razvoj softvera",
+       "downloadSyllabus": "Preuzmi silabus",
+       "year1": "1. godina",
+       "year2": "2. godina",
+       "year3": "3. godina",
+       "semester": "semestar",
+       "subject": "Predmet",
+       "totalEcts": "Ukupan broj ECTS bodova",
+       "totalEctsFor": "Ukupno ECTS za",
+       "distributedSemesters": "Raspoređeno kroz 6 semestara (3 godine studija)",
+       "rb": "R.B.",
+       "ects": "ECTS"
+     },
+    "softverski-inzenjering": {
+      "title": "Softverski inženjering",
+      "subtitle": "Nastavni plan i program - I ciklus studija",
+      "planTitle": "Nastavni plan i program",
+      "planSubtitle": "Detaljan pregled predmeta za sve četiri godine studija programa Softverski inženjering",
+      "downloadSyllabus": "Preuzmi silabus",
+      "year1": "1. godina",
+      "year2": "2. godina",
+      "year3": "3. godina",
+      "year4": "4. godina",
+      "semester": "semestar",
+      "subject": "Predmet",
+      "totalEcts": "Ukupan broj ECTS bodova",
+      "totalEctsFor": "Ukupno ECTS za",
+      "distributedSemesters": "Raspoređeno kroz 8 semestara (4 godine studija)",
+      "rb": "R.B.",
+      "ects": "ECTS"
+    },
+    "termini-konsultacija": {
+      "title": "Termini konsultacija",
+      "subtitle": "Raspored konsultacija sa nastavnim osobljem",
+      "scheduleLabel": "Raspored konsultacija:",
+      "facultyLocation": "Fakultet informacijskih tehnologija",
+      "importantNotes": "Važne napomene",
+      "note1": "• Konsultacije se održavaju u radnim danima prema rasporedu",
+      "note2": "• Molimo poštujte termine i najavite se unaprijed ako je potrebno",
+      "note3": "• U slučaju izmjene termina, nastavnici će vas obavijestiti",
+      "note4": "• Konsultacije su dostupne i online prema dogovoru",
+      "days": {
+        "monday": "ponedjeljak",
+        "tuesday": "utorak", 
+        "wednesday": "srijeda",
+        "thursday": "četvrtak",
+        "friday": "petak",
+        "workingDays": "svaki radni dan"
+      }
+    }
+  },
+  "upis": {
+    "cijeneStudija": {
+      "title": "Cijene studija",
+      "subtitle": "Transparentne informacije o školarini i troškovima studiranja",
+      "infoTitle": "Informacije o školarini",
+      "infoSubtitle": "Na Fakultetu informacijskih tehnologija nudimo transparentne i pristupačne cijene studija s fleksibilnim opcijama plaćanja.",
+      "tuitionFirstCycle": "Školarina za I ciklus",
+      "renewalYear": "Obnova godine",
+      "regularTuition": "Redovna školarina",
+      "firstCycleStudy": "I ciklus studija",
+      "repeatEnrollment": "Ponovljeni upis",
+      "specialArrangements": "Posebna dinamika uplata",
+      "feeDecision": "Odluka o visini troškova",
+      "tuitionDescription": "Školarina za sve godine I ciklusa iznosi 1800,00 KM.",
+      "tuitionDetails": "Studenti školarinu mogu uplatiti u dvije rate po 900,00 KM. Prva rata se uplaćuje prilikom upisa na godinu, a druga do kraja kalendarske godine (31.12.).",
+      "renewalDescription": "Studenti koji obnavljaju godinu za ponovljeni upis plaćaju 400,00 KM za semestar + 100,00 KM za svaki preostali nepoloženi ispit.",
+      "renewalDetails": "Studenti mogu iznos za obnovu također platiti u dvije jednake rate (drugu ratu trebaju platiti do ovjere zimskog semestra i upisa ljetnog semestra.)",
+      "paymentOptions": "Opcije plaćanja",
+      "totalAmount": "Ukupan iznos: 1800,00 KM",
+      "firstInstallment": "Prva rata: 900,00 KM (prilikom upisa)",
+      "secondInstallment": "Druga rata: 900,00 KM (do 31.12.)",
+      "semesterFee": "Semestar: 400,00 KM",
+      "examFee": "Nepoloženi ispit: 100,00 KM",
+      "twoInstallments": "Dvije jednake rate",
+      "secondInstallmentDeadline": "Druga rata do ovjere zimskog semestra",
+      "specialOptions": "Posebne mogućnosti",
+      "specialPaymentDescription": "Studenti koji nisu u mogućnosti da prate dinamiku uplata, mogu se obratiti molbom dekanu za utvrđivanje posebne dinamike.",
+      "feeDecisionDescription": "Odluku o visini troškova školarine i drugih usluga za studente možete pogledati ovdje.",
+      "viewDecision": "Pogledaj odluku",
+      "importantNotes": "Važne napomene",
+      "note1": "• Prva rata školarine se uplaćuje prilikom upisa na godinu",
+      "note2": "• Druga rata se uplaćuje do kraja kalendarske godine (31.12.)",
+      "note3": "• Za obnovu godine, druga rata se uplaćuje do ovjere zimskog semestra",
+      "note4": "• U slučaju teškoća s plaćanjem, kontaktirajte dekanat za posebnu dinamiku"
+    },
+    "naciniStudiranja": {
+      "title": "Načini studiranja",
+      "subtitle": "Status studenta - različite mogućnosti za vašu akademsku putanju",
+      "regularStudents": "Redovni samofinansirajući studenti",
+      "partTimeStudents": "Vanredni studenti",
+      "dlStudents": "DL studenti",
+      "dlwmsTitle": "DLWMS moduli",
+      "userProfile": "Vlastiti korisnički profil",
+      "teachingMaterials": "Nastavni materijali",
+      "studentService": "Studentska služba",
+      "attendance": "Evidencija",
+      "videoChannel": "FIT video kanal",
+      "forum": "FIT forum",
+      "onlineTeaching": "Online nastava",
+      "videoLectures": "Video lekcije",
+      "studyTypesTitle": "Načini studiranja - status studenta",
+      "studyTypesSubtitle": "Na Fakultetu informacijskih tehnologija kandidati se mogu upisati kao redovni samofinansirajući studenti, DL studenti ili vanredni studenti.",
+      "regularDescription": "Studenti koji studiraju prema programu koji se zasniva na punoj nastavnoj satnici. Prisustvo svim vidovima nastave je obavezno.",
+      "regularDetails": "Evidencija se vodi na osnovu koje student, po odslušanom semestru, dobija potpis od predmetnog nastavnika, pod uslovom da je odslušao minimalno 70% fonda nastavnih sati predmeta.",
+      "partTimeDescription": "Studijski program pohađaju uz rad ili drugu aktivnost.",
+      "partTimeDetails": "Fakultet je dužan organizirati nastavu za vanredne studente, minimalno jedan školski sat mjesečno po predmetu, pomoću savremenih sredstava učenja na daljinu. Vanredni student moraju izvršavati i sve ostale obaveze predviđene nastavnim programima.",
+      "dlDescription": "Prate nastavu pomoću savremenih sredstava učenja na daljinu.",
+      "dlDetails": "Fakultet je dužan obezbijediti minimalno 30% fonda nastavnih sati predmeta u virtualnoj učionici. Sva ostala prava i obaveze DL studenata su izjednačena sa redovnim studentima.",
+      "dlwmsSubtitle": "Prijavom na DLWMS svi studenti pristupaju sljedećim modulima sistema:",
+      "userProfileDesc": "Informacije o studentu, profil, slika, pristupni podaci itd.",
+      "teachingMaterialsDesc": "Tekstualni i multimedijalni dokumenti u elektronskom formatu",
+      "studentServiceDesc": "Prijava ispita, zahtjevi za potvrdama, obavijesti itd.",
+      "attendanceDesc": "Prisustvo nastavi, postavljeni radovi, uspjeh i sl.",
+      "videoChannelDesc": "Multimedijalni materijali",
+      "forumDesc": "Online komunikacija sa nastavnim osobljem i drugim studentima",
+      "examObligations": "Obaveze polaganja ispita",
+      "examObligationsDesc": "Svi studenti, bez obzira na status, imaju obavezu polaganja ispita na Fakultetu kako bi u kontrolisanim uslovima pristupili finalnoj provjeri znanja.",
+      "learningResourcesTitle": "Kao izvor za učenje studentima je omogućeno sljedeće:",
+      "onlineTeachingSubtitle": "Za DL i vanredne studente",
+      "onlineTeachingDesc": "Na FIT-u je višegodišnja praksa da nastavno osoblje organizira online nastavu i konsultacije po unaprijed utvrđenom rasporedu koji omogućavaju interakciju nastavnika i studenata. Nastava se održava u terminu koji se najavljuje u obavijestima na DLWMS-u.",
+      "videoLecturesSubtitle": "Dostupne na YouTube kanalu",
+      "videoLecturesDesc": "Za većinu predmeta dostupne su video lekcije objavljene na našem YouTube kanalu. Anketa provedena među studentima pokazala je da su video lekcije jedan od najkorisnijih resursa u pripremanju ispita. Video lekcije predstavljaju veliki preokret u odnosu na tradicionalno \"in-class\" studiranje te omogućavaju studentima kontrolu nad video lekcijama i istovremeno testiranje naučenog. Student može učiti vlastitim tempom, pregledati i ponavljati isječke po potrebi."
+    },
+    "staUpisati": {
+      "title": "Šta upisati?",
+      "subtitle": "Fakultet informacijskih tehnologija - mjesto gdje se stvara budućnost digitalnog svijeta",
+      "whyTitle": "Zašto?",
+      "whyDescription1": "Kvalitet i praktična relevantnost studijskog programa potvrđeni su činjenicom da je, prema podacima Zavoda za statistiku, 95% naših studenata zaposleno. IT sektor predstavlja područje koje se dinamično razvija i postoji stalna potreba za ovim kadrom u Bosni i Hercegovini i u svijetu.",
+      "whyDescription2": "FIT provodi periodična istraživanja u cilju analize usklađenosti kvalifikacija i vještina predviđenih nastavnim planom i programom sa potrebama i zahtjevima tržišta i okruženja. FIT ima veoma dobru saradnju sa državnim, federalnim i kantonalnim ministarstvima koja djeluju u sektoru obrazovanja i IT-a, kao i sa regionalnim IT kompanijama.",
+      "employment": "95% zaposlenost",
+      "employmentDesc": "Prema podacima Zavoda za statistiku, 95% naših studenata je zaposleno",
+      "dynamicDevelopment": "Dinamičan razvoj",
+      "dynamicDevelopmentDesc": "IT sektor se dinamično razvija sa stalnom potrebom za kadrom",
+      "qualityProgram": "Kvalitetan program",
+      "qualityProgramDesc": "Kontinuirano unapređenje nastavnog plana i programa",
+      "marketAlignment": "Tržišna usklađenost",
+      "marketAlignmentDesc": "Periodična istraživanja usklađenosti sa potrebama tržišta",
+      "goodCooperation": "Dobra saradnja",
+      "goodCooperationDesc": "Saradnja sa ministarstvima i regionalnim IT kompanijama",
+      "continuousImprovement": "Kontinuirano unapređenje",
+      "continuousImprovementDesc": "Fakultet kontinuirano radi na unapređenju kvaliteta svih aktivnosti: nastave, sadržaja nastavnog plana i programa, sistema ocjenjivanja, udžbenika i literature, opremljenosti učioničkog i drugog prostora, DL platforme, naučno-istraživačke djelatnosti, izdavačke djelatnosti, selekcije nastavnog kadra i administrativnog osoblja, bibliotečke djelatnosti, cjeloživotnog obrazovanja i drugih standarda.",
+      "visionMessage": "Naša vizija budućnosti je sigurna i pozitivna. Pridružite nam se!",
+      "informatorTitle": "FIT Informator",
+      "informatorDescription": "FIT informator je priručnik namijenjen brucošima Fakulteta informacijskih tehnologija \"Džemal Bijedić\" u Mostaru koji sadrži odgovore na najčešće postavljena pitanja.",
+      "informatorPurpose": "Cilj informatora je olakšati snalaženje u novom akademskom okruženju i pružiti podršku na početku studiranja. Informator su napravili Adna Ćušić i Dino Burić.",
+      "downloadInformator": "Preuzmi Informator"
+    }
   }
 } 

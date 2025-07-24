@@ -2,8 +2,10 @@
 
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Linkedin, Youtube, ArrowUp } from 'lucide-react';
+import { useTranslation } from '../contexts/LanguageContext';
 
 const Footer = () => {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
   const scrollToTop = () => {
@@ -46,8 +48,7 @@ const Footer = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              Fakultet informacijskih tehnologija &quot;Džemal Bijedić&quot; Univerziteta u Mostaru - 
-              mjesto gdje se stvara budućnost digitalnog svijeta.
+              {t('footer.description')}
             </motion.p>
             <motion.div 
               className="flex space-x-4 justify-center lg:justify-start"
@@ -86,13 +87,13 @@ const Footer = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h4 className="text-xl font-semibold mb-6 text-white">Brzi linkovi</h4>
+            <h4 className="text-xl font-semibold mb-6 text-white">{t('footer.quickLinks')}</h4>
             <ul className="space-y-4">
               {[
-                { name: 'Fakultet', href: '/fakultet' },
-                { name: 'Osoblje', href: '/osoblje' },
-                { name: 'Vijesti', href: '/vijesti' },
-                { name: 'Kontakt', href: '/kontakt' }
+                { name: t('footer.aboutFaculty'), href: '/fakultet' },
+                { name: t('footer.staff'), href: '/osoblje' },
+                { name: t('footer.news'), href: '/vijesti' },
+                { name: t('footer.contact'), href: '/kontakt' }
               ].map((item, index) => (
                 <motion.li
                   key={item.name}
@@ -119,12 +120,12 @@ const Footer = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            <h4 className="text-xl font-semibold mb-6 text-white">Servisne informacije</h4>
+            <h4 className="text-xl font-semibold mb-6 text-white">{t('footer.serviceInfo')}</h4>
             <ul className="space-y-2">
               {[
-                'Žiro račun Fakulteta',
-                '1610000000291496',
-                'Raiffeisen Bank'
+                t('footer.bankAccount'),
+                t('footer.accountNumber'),
+                t('footer.bank')
               ].map((item, index) => (
                 <motion.li
                   key={item}
@@ -151,12 +152,12 @@ const Footer = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <h4 className="text-xl font-semibold mb-6 text-white">Kontakt</h4>
+            <h4 className="text-xl font-semibold mb-6 text-white">{t('footer.contact')}</h4>
             <div className="space-y-6">
               {[
                 {
                   icon: MapPin,
-                  content: "Ulica Sjeverni logor br. 12,\n88000 Mostar, BiH",
+                  content: t('footer.location'),
                   href: null,
                   id: "address"
                 },
@@ -168,13 +169,13 @@ const Footer = () => {
                 },
                 {
                   icon: Mail,
-                  content: "info@fit.ba",
-                  href: "mailto:info@fit.ba",
+                  content: "esluzba@edu.fit.ba",
+                  href: "mailto:esluzba@edu.fit.ba",
                   id: "email"
                 },
                 {
                   icon: Clock,
-                  content: "Pon-Pet: 08:00-16:00\nSubota: 11:00-13:00",
+                  content: t('footer.workingHoursValue'),
                   href: null,
                   id: "hours"
                 }
@@ -226,8 +227,8 @@ const Footer = () => {
               transition={{ duration: 0.4, delay: 0.6 }}
               viewport={{ once: true }}
             >
-              <p>© {currentYear} Fakultet informacijskih tehnologija Mostar.</p>
-              <p>Sva prava zadržana.</p>
+              <p>© {currentYear} {t('hero.title')} Mostar.</p>
+              <p>{t('footer.allRightsReserved')}.</p>
             </motion.div>
             <motion.div 
               className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 text-center"

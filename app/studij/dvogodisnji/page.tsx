@@ -5,8 +5,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, ChevronRight, Download, BookOpen, Calendar, Users } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { useTranslation } from '../../../contexts/LanguageContext';
 
 const DvogodisnjiPage = () => {
+  const { t } = useTranslation();
   const [expandedYears, setExpandedYears] = useState<number[]>([1]);
 
   const toggleYear = (year: number) => {
@@ -20,7 +22,7 @@ const DvogodisnjiPage = () => {
   const studyPlan = [
     {
       year: 1,
-      title: "1. godina",
+      title: t('studij.dvogodisnji.year1'),
       semesters: [
         {
           semester: 1,
@@ -45,7 +47,7 @@ const DvogodisnjiPage = () => {
     },
     {
       year: 2,
-      title: "2. godina",
+      title: t('studij.dvogodisnji.year2'),
       semesters: [
         {
           semester: 3,
@@ -91,10 +93,10 @@ const DvogodisnjiPage = () => {
             className="text-center"
           >
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Dvogodišnji master
+              {t('studij.dvogodisnji.title')}
             </h1>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-              Nastavni plan i program - II ciklus studija (120 ECTS)
+              {t('studij.dvogodisnji.subtitle')}
             </p>
           </motion.div>
         </div>
@@ -111,10 +113,10 @@ const DvogodisnjiPage = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Nastavni plan i program
+              {t('studij.dvogodisnji.planTitle')}
             </h2>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto mb-8">
-              Detaljan pregled predmeta za dvogodišnji master program (120 ECTS)
+              {t('studij.dvogodisnji.planSubtitle')}
             </p>
             
             {/* Download Syllabus Button */}
@@ -127,7 +129,7 @@ const DvogodisnjiPage = () => {
               className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 shadow-lg"
             >
               <Download className="w-5 h-5 mr-2" />
-              Preuzmi silabus
+              {t('studij.dvogodisnji.downloadSyllabus')}
             </motion.a>
           </motion.div>
 
@@ -179,7 +181,7 @@ const DvogodisnjiPage = () => {
                             <div className="flex items-center">
                               <Calendar className="w-5 h-5 text-blue-600 mr-2" />
                               <h4 className="text-lg font-semibold text-gray-900">
-                                {semester.semester}. semestar
+                                {semester.semester}. {t('studij.dvogodisnji.semester')}
                               </h4>
                             </div>
 
@@ -189,13 +191,13 @@ const DvogodisnjiPage = () => {
                                 <thead className="bg-gray-50">
                                   <tr>
                                     <th className="border border-gray-200 px-4 py-3 text-left text-sm font-semibold text-gray-700">
-                                      Predmet
+                                      {t('studij.dvogodisnji.subject')}
                                     </th>
                                     <th className="border border-gray-200 px-4 py-3 text-center text-sm font-semibold text-gray-700">
-                                      Izborni
+                                      {t('studij.dvogodisnji.elective')}
                                     </th>
                                     <th className="border border-gray-200 px-4 py-3 text-center text-sm font-semibold text-gray-700">
-                                      ECTS
+                                      {t('studij.dvogodisnji.totalEcts')}
                                     </th>
                                   </tr>
                                 </thead>
@@ -228,7 +230,7 @@ const DvogodisnjiPage = () => {
                                 <tfoot className="bg-blue-50">
                                   <tr>
                                     <td colSpan={2} className="border border-gray-200 px-4 py-3 text-sm font-semibold text-gray-700">
-                                      Ukupno ECTS za {semester.semester}. semestar:
+                                      {t('studij.dvogodisnji.totalEctsFor')} {semester.semester}. {t('studij.dvogodisnji.semester')}:
                                     </td>
                                     <td className="border border-gray-200 px-4 py-3 text-sm font-bold text-center text-blue-600">
                                       {semester.subjects.reduce((total, subject) => total + subject.ects, 0)}
@@ -257,14 +259,14 @@ const DvogodisnjiPage = () => {
             <div className="text-center">
               <Users className="w-12 h-12 mx-auto mb-4 text-blue-200" />
               <h3 className="text-2xl font-bold mb-4">
-                Dvogodišnji master program
+                {t('studij.dvogodisnji.masterProgram')}
               </h3>
               <div className="max-w-3xl mx-auto space-y-4">
                 <p className="text-3xl font-bold text-blue-100">
-                  {studyPlan.reduce((total, year) => total + calculateTotalECTS(year), 0)} ECTS
+                  {studyPlan.reduce((total, year) => total + calculateTotalECTS(year), 0)} {t('studij.dvogodisnji.totalEcts')}
                 </p>
                 <p className="text-blue-200">
-                  Raspoređeno kroz 4 semestra (2 godine studija)
+                  {t('studij.dvogodisnji.distributedSemesters')}
                 </p>
                 <div className="grid md:grid-cols-2 gap-4 mt-6">
                   <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
@@ -288,7 +290,7 @@ const DvogodisnjiPage = () => {
             className="mt-8 bg-white rounded-xl shadow-lg p-6"
           >
             <h4 className="text-lg font-semibold text-gray-900 mb-4">
-              Napomene o izbornim predmetima
+              {t('studij.dvogodisnji.electiveCoursesNotes')}
             </h4>
             <div className="grid md:grid-cols-2 gap-6">
               <div>
@@ -308,7 +310,7 @@ const DvogodisnjiPage = () => {
             </div>
             <div className="mt-4 p-3 bg-blue-50 rounded-lg">
               <p className="text-sm text-blue-700">
-                <strong>Napomena:</strong> Studenti biraju jedan izborni predmet po semestru gdje su dostupni.
+                <strong>{t('studij.dvogodisnji.electiveNote')}</strong>
               </p>
             </div>
           </motion.div>

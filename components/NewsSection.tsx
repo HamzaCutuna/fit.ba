@@ -25,48 +25,48 @@ const NewsSection = () => {
 
   const featuredNews = {
     id: 'featured-1',
-    title: "Kolektivni godišnji odmor",
+    title: t('news.items.vacationTitle'),
     date: "18. juli 2025.",
     author: "FIT Mostar",
-    category: "Obavještenja",
+    category: t('news.categories.announcements'),
     readTime: "1 min",
-    description: "Kolektivni godišnji odmor na Fakultetu informacijskih tehnologija Univerziteta \"Džemal Bijedić\" u Mostaru počinje u ponedjeljak, 21.7.2025. godine.",
-    fullContent: "Kolektivni godišnji odmor na Fakultetu informacijskih tehnologija Univerziteta \"Džemal Bijedić\" u Mostaru počinje u ponedjeljak, 21.7.2025. godine. Obavještavamo studente da Fakultet neće raditi do 18.8.2025. godine. PRIJATAN ODMOR SVIMA!",
+    description: t('news.items.vacationExcerpt'),
+    fullContent: t('news.items.vacationExcerpt') + " Obavještavamo studente da Fakultet neće raditi do 18.8.2025. godine. PRIJATAN ODMOR SVIMA!",
     image: "/images/fit1.png"
   };
 
   const recentNews = [
     {
       id: 'recent-1',
-      title: "Obavještenje o upisu primljenih kandidata u prvu godinu I ciklusa studija u ak. 2025/2026 godini",
+      title: t('news.items.enrollmentTitle'),
       date: "11. juli 2025.",
       author: "FIT Mostar",
-      category: "Obavještenja",
+      category: t('news.categories.announcements'),
       readTime: "2 min",
-      description: "Obavještavamo sve primljene kandidate o procedurama upisa za akademsku 2025/2026 godinu.",
-      fullContent: "Obavještavamo sve primljene kandidate da se upis u prvu godinu I ciklusa studija za akademsku 2025/2026 godinu vrši prema objavljenoj konačnoj rang listi.\n\nKandidati su dužni da se jave u sekretarijat fakulteta u terminu od 15. do 25. jula 2025. godine sa potrebnom dokumentacijom.",
+      description: t('news.items.enrollmentExcerpt'),
+      fullContent: t('news.items.enrollmentExcerpt') + "\n\nKandidati su dužni da se jave u sekretarijat fakulteta u terminu od 15. do 25. jula 2025. godine sa potrebnom dokumentacijom.",
       image: "/images/fit2.jpg"
     },
     {
       id: 'recent-2',
-      title: "Konačna rang lista za upis primljenih kandidata u prvu godinu I ciklusa studija (ak. 2025/2026)",
+      title: t('news.items.rankListTitle'),
       date: "10. juli 2025.",
       author: "FIT Mostar",
-      category: "Upis",
+      category: t('news.categories.enrollment'),
       readTime: "1 min",
-      description: "Objavljena je konačna rang lista za upis kandidata u prvu godinu prvog ciklusa studija.",
-      fullContent: "Konačna rang lista za upis primljenih kandidata u prvu godinu I ciklusa studija za akademsku 2025/2026 godinu je objavljena.\n\nLista je dostupna na zvaničnoj web stranici fakulteta i na oglasnoj tabli.\n\nKandidati koji se nalaze na listi mogu pristupiti upisu u određenom terminu. Za sve dodatne informacije obratite se sekretarijatu fakulteta.",
+      description: t('news.items.rankListExcerpt'),
+      fullContent: t('news.items.rankListExcerpt') + "\n\nLista je dostupna na zvaničnoj web stranici fakulteta i na oglasnoj tabli.\n\nKandidati koji se nalaze na listi mogu pristupiti upisu u određenom terminu. Za sve dodatne informacije obratite se sekretarijatu fakulteta.",
       image: "/images/fit4.jpg"
     },
     {
       id: 'recent-3',
-      title: "Konkurs za izbor saradnika u zvanje asistent",
+      title: t('news.items.assistantTitle'),
       date: "13. januar 2025.",
       author: "FIT Mostar",
-      category: "Konkurs",
+      category: t('news.categories.competition'),
       readTime: "3 min",
-      description: "Otvoren je konkurs za izbor saradnika u zvanje asistent na Fakultetu informacijskih tehnologija.",
-      fullContent: "Fakultet informacijskih tehnologija Univerziteta \"Džemal Bijedić\" u Mostaru raspisuje konkurs za izbor saradnika u zvanje asistent za nastavni predmet iz oblasti informacijskih tehnologija.\n\nUslovi konkursa:\n- Završen II ciklus studija (master/magistar) iz relevantne oblasti\n- Prosjek ocjena min. 8,00\n- Poznavanje engleskog jezika\n\nPrijave se podnose do 15. februara 2025. godine u sekretarijatu fakulteta.",
+      description: t('news.items.assistantExcerpt'),
+      fullContent: t('news.items.assistantExcerpt') + "\n\nUslovi konkursa:\n- Završen II ciklus studija (master/magistar) iz relevantne oblasti\n- Prosjek ocjena min. 8,00\n- Poznavanje engleskog jezika\n\nPrijave se podnose do 15. februara 2025. godine u sekretarijatu fakulteta.",
       image: "/images/fit3.jpg"
     }
   ];

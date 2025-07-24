@@ -42,14 +42,13 @@ const Hero = () => {
   );
   
 
+  const { t } = useTranslation();
 
   const stats = [
-    { icon: Users, value: "2000+", label: "Studenata" },
-    { icon: Award, value: "25+", label: "Godina iskustva" },
-    { icon: BookOpen, value: "2", label: "Studijska programa" },
+    { icon: Users, value: "2000+", label: t('hero.stats.students') },
+    { icon: Award, value: "25+", label: t('hero.stats.experience') },
+    { icon: BookOpen, value: "2", label: t('hero.stats.programs') },
   ];
-
-  const { t } = useTranslation();
 
   return (
     <section ref={containerRef} className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-16 md:pb-8">

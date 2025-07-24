@@ -4,45 +4,47 @@ import { motion } from 'framer-motion';
 import { DollarSign, RefreshCw, FileText, Clock, CreditCard, AlertCircle, Download } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { useTranslation } from '../../../contexts/LanguageContext';
 
 const CijeneStudijaPage = () => {
+  const { t } = useTranslation();
   const tuitionInfo = [
     {
       icon: DollarSign,
-      title: "Školarina za I ciklus",
+      title: t('upis.cijeneStudija.tuitionFirstCycle'),
       amount: "1800,00 KM",
-      description: "Školarina za sve godine I ciklusa iznosi 1800,00 KM.",
-      details: "Studenti školarinu mogu uplatiti u dvije rate po 900,00 KM. Prva rata se uplaćuje prilikom upisa na godinu, a druga do kraja kalendarske godine (31.12.)."
+      description: t('upis.cijeneStudija.tuitionDescription'),
+      details: t('upis.cijeneStudija.tuitionDetails')
     },
     {
       icon: RefreshCw,
-      title: "Obnova godine",
+      title: t('upis.cijeneStudija.renewalYear'),
       amount: "400,00 KM + 100,00 KM",
-      description: "Studenti koji obnavljaju godinu za ponovljeni upis plaćaju 400,00 KM za semestar + 100,00 KM za svaki preostali nepoloženi ispit.",
-      details: "Studenti mogu iznos za obnovu također platiti u dvije jednake rate (drugu ratu trebaju platiti do ovjere zimskog semestra i upisa ljetnog semestra.)"
+      description: t('upis.cijeneStudija.renewalDescription'),
+      details: t('upis.cijeneStudija.renewalDetails')
     }
   ];
 
   const paymentOptions = [
     {
       icon: CreditCard,
-      title: "Redovna školarina",
-      subtitle: "I ciklus studija",
+      title: t('upis.cijeneStudija.regularTuition'),
+      subtitle: t('upis.cijeneStudija.firstCycleStudy'),
       items: [
-        "Ukupan iznos: 1800,00 KM",
-        "Prva rata: 900,00 KM (prilikom upisa)",
-        "Druga rata: 900,00 KM (do 31.12.)"
+        t('upis.cijeneStudija.totalAmount'),
+        t('upis.cijeneStudija.firstInstallment'),
+        t('upis.cijeneStudija.secondInstallment')
       ]
     },
     {
       icon: RefreshCw,
-      title: "Obnova godine",
-      subtitle: "Ponovljeni upis",
+      title: t('upis.cijeneStudija.renewalYear'),
+      subtitle: t('upis.cijeneStudija.repeatEnrollment'),
       items: [
-        "Semestar: 400,00 KM",
-        "Nepoloženi ispit: 100,00 KM",
-        "Dvije jednake rate",
-        "Druga rata do ovjere zimskog semestra"
+        t('upis.cijeneStudija.semesterFee'),
+        t('upis.cijeneStudija.examFee'),
+        t('upis.cijeneStudija.twoInstallments'),
+        t('upis.cijeneStudija.secondInstallmentDeadline')
       ]
     }
   ];
@@ -50,13 +52,13 @@ const CijeneStudijaPage = () => {
   const specialArrangements = [
     {
       icon: AlertCircle,
-      title: "Posebna dinamika uplata",
-      description: "Studenti koji nisu u mogućnosti da prate dinamiku uplata, mogu se obratiti molbom dekanu za utvrđivanje posebne dinamike."
+      title: t('upis.cijeneStudija.specialArrangements'),
+      description: t('upis.cijeneStudija.specialPaymentDescription')
     },
     {
       icon: FileText,
-      title: "Odluka o visini troškova",
-      description: "Odluku o visini troškova školarine i drugih usluga za studente možete pogledati ovdje.",
+      title: t('upis.cijeneStudija.feeDecision'),
+      description: t('upis.cijeneStudija.feeDecisionDescription'),
       hasLink: true
     }
   ];
@@ -76,10 +78,10 @@ const CijeneStudijaPage = () => {
             className="text-center"
           >
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Cijene studija
+              {t('upis.cijeneStudija.title')}
             </h1>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-              Transparentne informacije o školarini i troškovima studiranja
+              {t('upis.cijeneStudija.subtitle')}
             </p>
           </motion.div>
         </div>
@@ -96,10 +98,10 @@ const CijeneStudijaPage = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Informacije o školarini
+              {t('upis.cijeneStudija.infoTitle')}
             </h2>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-              Na Fakultetu informacijskih tehnologija nudimo transparentne i pristupačne cijene studija s fleksibilnim opcijama plaćanja.
+              {t('upis.cijeneStudija.infoSubtitle')}
             </p>
           </motion.div>
 
@@ -149,7 +151,7 @@ const CijeneStudijaPage = () => {
             className="mb-16"
           >
             <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
-              Opcije plaćanja
+              {t('upis.cijeneStudija.paymentOptions')}
             </h3>
             
             <div className="grid md:grid-cols-2 gap-8">
@@ -193,7 +195,7 @@ const CijeneStudijaPage = () => {
             className="mb-16"
           >
             <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
-              Posebne mogućnosti
+              {t('upis.cijeneStudija.specialOptions')}
             </h3>
             
             <div className="grid md:grid-cols-2 gap-8">
@@ -226,7 +228,7 @@ const CijeneStudijaPage = () => {
                        className="mt-4 inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200"
                      >
                        <Download className="w-4 h-4 mr-2" />
-                       Pogledaj odluku
+                       {t('upis.cijeneStudija.viewDecision')}
                      </a>
                    )}
                 </motion.div>
@@ -244,20 +246,20 @@ const CijeneStudijaPage = () => {
             <div className="text-center">
               <Clock className="w-12 h-12 mx-auto mb-4 text-blue-200" />
               <h3 className="text-2xl font-bold mb-4">
-                Važne napomene
+                {t('upis.cijeneStudija.importantNotes')}
               </h3>
               <div className="max-w-3xl mx-auto space-y-4 text-blue-100">
                 <p className="leading-relaxed">
-                  • Prva rata školarine se uplaćuje prilikom upisa na godinu
+                  {t('upis.cijeneStudija.note1')}
                 </p>
                 <p className="leading-relaxed">
-                  • Druga rata se uplaćuje do kraja kalendarske godine (31.12.)
+                  {t('upis.cijeneStudija.note2')}
                 </p>
                 <p className="leading-relaxed">
-                  • Za obnovu godine, druga rata se uplaćuje do ovjere zimskog semestra
+                  {t('upis.cijeneStudija.note3')}
                 </p>
                 <p className="leading-relaxed">
-                  • U slučaju teškoća s plaćanjem, kontaktirajte dekanat za posebnu dinamiku
+                  {t('upis.cijeneStudija.note4')}
                 </p>
               </div>
             </div>

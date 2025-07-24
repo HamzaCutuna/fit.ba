@@ -205,7 +205,7 @@ export default function RootLayout({
         className={`${manrope.variable} ${geistMono.variable} antialiased`}
       >
         <LanguageProvider>
-          {children}
+        {children}
         </LanguageProvider>
         <Analytics />
         <PerformanceOptimizer />

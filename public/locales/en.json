@@ -14,6 +14,28 @@
     "loading": "Loading...",
     "error": "Error"
   },
+  "navbar": {
+    "faculty": "Faculty",
+    "aboutFaculty": "About Faculty",
+    "staff": "Staff",
+    "enrollment": "Enrollment",
+    "whatToEnroll": "What to enroll?",
+    "studyMethods": "Study methods",
+    "studyPrices": "Study prices",
+    "studies": "Studies",
+    "firstCycle": "1st Cycle",
+    "studyRules": "Study rules",
+    "curriculumSoftwareDev": "Curriculum - Software Development",
+    "curriculumSoftwareEng": "Curriculum - Software Engineering",
+    "consultationTerms": "Student consultation terms",
+    "secondCycle": "2nd Cycle",
+    "curriculumOneYear": "Curriculum - one year (60 ECTS)",
+    "curriculumTwoYear": "Curriculum for second cycle - two years (120 ECTS)",
+    "news": "News",
+    "contact": "Contact",
+    "logo": "Faculty of Information Technologies",
+    "logoShort": "FIT, Mostar"
+  },
   "hero": {
     "badge": "Discover our faculty",
     "welcome": "Welcome to",
@@ -22,7 +44,12 @@
     "description": "The future starts here. Modern studies adapted to the digital age.",
     "cta": "Learn more",
     "enrollNow": "Enroll now",
-    "promoVideo": "Promo video"
+    "promoVideo": "Promo video",
+    "stats": {
+      "students": "Students",
+      "experience": "Years of experience",
+      "programs": "Study programs"
+    }
   },
   "news": {
     "title": "Latest news",
@@ -30,13 +57,359 @@
     "description": "Stay up to date with the latest announcements, events and achievements of our faculty",
     "viewAll": "View all news",
     "featuredNews": "Featured news",
-    "recentNews": "Recent news"
+    "recentNews": "Recent news",
+    "categories": {
+      "announcements": "Announcements",
+      "enrollment": "Enrollment",
+      "competition": "Competition"
+    },
+    "items": {
+      "vacationTitle": "Collective annual leave",
+      "vacationExcerpt": "Collective annual leave at the Faculty of Information Technology of the University \"Džemal Bijedić\" in Mostar begins on Monday, July 21, 2025.",
+      "enrollmentTitle": "Notice on enrollment of accepted candidates in the first year of the 1st cycle of studies in the academic year 2025/2026",
+      "enrollmentExcerpt": "We inform all accepted candidates about enrollment procedures for the academic year 2025/2026.",
+      "rankListTitle": "Final ranking list for enrollment of accepted candidates in the first year of the 1st cycle of studies (academic year 2025/2026)",
+      "rankListExcerpt": "The final ranking list for enrollment of candidates in the first year of the first cycle of studies has been published.",
+      "assistantTitle": "Competition for selection of associate in the title of assistant",
+      "assistantExcerpt": "A competition for the selection of associates in the title of assistant at the Faculty of Information Technology is open."
+    }
   },
   "footer": {
-    "description": "Faculty of Information Technology is a leading educational institution in the field of IT in Bosnia and Herzegovina.",
+    "description": "Faculty of Information Technology is a leading educational institution in the field of information technology in Bosnia and Herzegovina.",
     "quickLinks": "Quick links",
+    "aboutFaculty": "About Faculty",
+    "staff": "Staff",
+    "studies": "Studies",
+    "enrollment": "Enrollment",
+    "news": "News",
     "contact": "Contact",
+    "serviceInfo": "Service Information",
+    "bankAccount": "Faculty Bank Account",
+    "accountNumber": "1610000000291496",
+    "bank": "Raiffeisen Bank",
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email",
+    "workingHours": "Working hours",
+    "workingHoursValue": "Mon-Fri: 08:00-16:00\nSaturday: 11:00-13:00",
     "followUs": "Follow us",
-    "allRightsReserved": "All rights reserved"
+    "allRightsReserved": "All rights reserved",
+    "university": "University \"Džemal Bijedić\"",
+    "location": "Sjeverni logor 12, 88000 Mostar"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Get in touch with us. Our team is here to help you with all questions related to studies and the faculty.",
+    "location": "Location",
+    "locationSubtitle": "Find us at our location in Mostar",
+    "locationText": "Faculty of Information Technology, Mostar, Bosnia and Herzegovina",
+    "faq": "Frequently Asked Questions",
+    "faqSubtitle": "Answers to the most common questions from our students",
+    "positions": {
+      "dean": "Dean",
+      "viceDeanTeaching": "Vice Dean for Teaching",
+      "viceDeanResearch": "Vice Dean for Research",
+      "studentService": "Student Service",
+      "techSupport": "Technical Support",
+      "dlwmsSupport": "DLWMS Support"
+    },
+    "services": {
+      "office365": "Office 365 service | Microsoft Imagine | Domain"
+    },
+    "workingHours": {
+      "studentService": "Mon-Fri 11AM-2PM"
+    },
+    "faqItems": [
+      {
+        "question": "How can I contact the student service?",
+        "answer": "Student service is available via email at esluzba@edu.fit.ba or by phone at +38736/281-160. Working hours are Monday-Friday from 11AM to 2PM."
+      },
+      {
+        "question": "What are the tuition payment methods?",
+        "answer": "Information about tuition payment can be obtained by contacting the student service or the vice dean for teaching."
+      },
+      {
+        "question": "How can I get technical support?",
+        "answer": "Technical support is available via email at tehnicka.podrska@edu.fit.ba for all questions related to Office 365, Microsoft Imagine and domain."
+      },
+      {
+        "question": "What are the faculty working hours?",
+        "answer": "Student service works Monday-Friday from 11AM to 2PM. For other services, contact the responsible persons directly."
+      },
+      {
+        "question": "How can I get access to the DLWMS system?",
+        "answer": "For DLWMS system access and technical support, contact dlwms.podrska@edu.fit.ba."
+      },
+      {
+        "question": "How can I schedule a meeting with the dean?",
+        "answer": "For a meeting with Dean Prof. Dr. Nina Bijedić, contact her directly at nbijedic@edu.fit.ba or by phone +38736/281-172."
+      }
+    ]
+  },
+  "newsPage": {
+    "title": "News",
+    "subtitle": "Follow the latest announcements, events and achievements of our faculty",
+    "badge": "News and announcements"
+  },
+  "months": {
+    "january": "January",
+    "february": "February",
+    "march": "March",
+    "april": "April",
+    "may": "May",
+    "june": "June",
+    "july": "July",
+    "august": "August",
+    "september": "September",
+    "october": "October",
+    "november": "November",
+    "december": "December"
+  },
+  "facultyPage": {
+    "title": "About Faculty",
+    "subtitle": "The Faculty of Information Technologies is a member of the public University \"Džemal Bijedić\" in Mostar, dedicated to excellence in teaching, research and innovation.",
+    "basicInfo": {
+      "title": "Basic Information",
+      "content1": "The Faculty of Information Technologies (FIT) is a member of the public University \"Džemal Bijedić\" in Mostar. It was founded in 1997 as a two-year Computer Science Study, and in 2003 it was re-registered as a Faculty. FIT organizes Bachelor (first cycle) and Master (second cycle) studies in the field of information technologies. The curriculum is implemented in accordance with the principles of the Bologna Declaration.",
+      "content2": "The first cycle is organized and implemented in two ways:",
+      "inClass": "classical, so-called in-class system",
+      "distanceLearning": "distance learning system, so-called DistanceLearning – DL"
+    },
+    "distanceLearning": {
+      "title": "Distance Learning - First in BiH",
+      "content1": "FIT is the institution that first introduced the concept of distance learning in Bosnia and Herzegovina and has a leading role in the process of implementation and development of distance learning in our country.",
+      "content2": "The Faculty has four computer labs with over one hundred computer workstations and four laboratories. In addition to regular teaching activities, students and teaching staff have the opportunity to conduct various research in the mentioned labs and laboratories."
+    },
+    "quality": {
+      "title": "Quality and Employment",
+      "content1": "The quality and practical relevance of the study program are confirmed by the fact that, according to data from the Statistical Office, 95% of our students are employed. The IT sector represents an area that is dynamically developing and there is a constant need for this personnel in Bosnia and Herzegovina and worldwide.",
+      "content2": "FIT conducts periodic research to analyze the alignment of qualifications and skills provided by the curriculum with the needs and requirements of the market and environment."
+    },
+    "collaboration": {
+      "title": "Collaboration and Partnership",
+      "content1": "FIT has very good cooperation with state, federal and cantonal ministries operating in the education and IT sector, as well as with regional IT companies.",
+      "content2": "The Faculty also has very successful international cooperation, primarily with universities in Austria (FH Joanneum, Graz), Germany (University of Paderborn) and Spain (University of Lleida), as well as with universities in Bosnia and Herzegovina and the region.",
+      "content3": "This cooperation includes the implementation of numerous activities such as exchange of teachers and students, implementation of joint scientific research projects, participation in seminars and conferences, implementation of professional development programs, as well as other activities aimed at intensifying academic cooperation. FIT has participated in a large number of international projects, as well as projects funded from state funds."
+    },
+    "improvement": {
+      "title": "Continuous Improvement",
+      "content": "The Faculty continuously works on improving the quality of all activities: teaching, curriculum content, assessment system, textbooks and literature, classroom and other space equipment, DL platform, scientific research activities, publishing activities, selection of teaching staff and administrative personnel, library activities, lifelong learning and other standards."
+    },
+    "firstDean": {
+      "title": "Words from the First Dean",
+      "name": "prof. dr. sc. Safet Krkić",
+      "position": "First Dean of the Faculty of Information Technologies",
+      "quote": "Recognizing and following the aspirations and desires of young people who planned to continue their education at one of the higher education institutions of our University, in 1996 we launched an initiative to form a Computer Science Study at the University \"Džemal Bijedić\". The Academic Council formed a Commission tasked with preparing a feasibility study for the establishment of Computer Science Studies. The study confirmed the great interest of young people and showed the justification for establishing a two-year Computer Science Study and confirmed the assumptions of successful work and development. On that basis, the University Council made a decision on October 10, 1997, to establish and start the work of a new higher education institution. By establishing Computer Science Studies at the University, we met the wishes of a large number of young people from Bosnia and Herzegovina to acquire education in the field of computer science in their own country.",
+      "content1": "The dynamic growth and development of the Study imposed the need for its transformation into the Faculty of Information Technologies. The Academic Council and the University Council accepted the Feasibility Study that was prepared in that sense. Accordingly, a decision was made, and the cantonal court of the HN canton performed the court registration of that higher education institution on February 17, 2003.",
+      "content2": "From the beginning, we understood that the dynamic development of information technologies can be followed by innovating, supplementing and correcting the Curriculum and introducing new methods and new forms of interaction in the teaching process. Thus, in ten years of our existence, we have changed or supplemented the content of the Curriculum six times. The seriousness of our approach to this work was also contributed by our engagement in the TEMPUS project for the development of an adequate curriculum for the education of computer scientists. We will continue this trend of curriculum development of our Faculty in the future.",
+      "content3": "From the 2001/02 school year, we also organized distance learning. Our efforts will be more focused in that direction in the future. In the 2002/03 school year, we also started teaching at postgraduate studies and thus stepped into the strategy of solving the problem of staff shortage."
+    }
+  },
+  "staffPage": {
+    "title": "All Staff",
+    "subtitle": "Meet our professional staff dedicated to educating new generations of IT professionals.",
+    "categories": {
+      "all": "All",
+      "faculty": "Faculty",
+      "associates": "Associates",
+      "administration": "Administration"
+    },
+    "contact": {
+      "title": "Contact Us",
+      "subtitle": "Do you have questions about our staff or want to learn more about our programs? Feel free to contact us.",
+      "email": "Email",
+      "phone": "Phone",
+      "address": "Address"
+    }
+  },
+  "studij": {
+    "dvogodisnji": {
+      "title": "Two-year Master's",
+      "subtitle": "Curriculum - 2nd cycle studies (120 ECTS)",
+      "planTitle": "Curriculum",
+      "planSubtitle": "Detailed overview of subjects for the two-year master's program (120 ECTS)",
+      "downloadSyllabus": "Download Syllabus",
+      "year1": "1st year",
+      "year2": "2nd year",
+      "semester": "semester",
+      "totalEcts": "Total ECTS",
+      "elective": "Elective",
+      "mandatory": "Mandatory",
+      "subject": "Subject",
+      "totalEctsFor": "Total ECTS for",
+      "masterProgram": "Two-year Master's Program",
+      "distributedSemesters": "Distributed across 4 semesters (2 years of study)",
+      "electiveCoursesNotes": "Notes on Elective Courses",
+      "electiveNote": "Note: Students choose one elective course per semester where available."
+    },
+    "jednogodisnji": {
+      "title": "One-year Master's",
+      "subtitle": "Curriculum - 2nd cycle studies (60 ECTS)",
+      "planTitle": "Curriculum",
+      "planSubtitle": "Detailed overview of subjects for the one-year master's program (60 ECTS)",
+      "downloadSyllabus": "Download Syllabus",
+      "year1": "1st year",
+      "semester": "Semester",
+      "subject": "Subject",
+      "elective": "Elective",
+      "totalEcts": "Total ECTS",
+      "totalEctsFor": "Total ECTS for",
+      "masterProgram": "One-year Master's Program",
+      "distributedSemesters": "Distributed across 2 semesters (1 year of study)",
+      "yes": "Yes",
+      "no": "No"
+    },
+         "razvoj-softvera": {
+       "title": "Software Development",
+       "subtitle": "Curriculum - 1st cycle studies",
+       "planTitle": "Curriculum",
+       "planSubtitle": "Detailed overview of subjects for all three years of the Software Development program",
+       "downloadSyllabus": "Download Syllabus",
+       "year1": "1st year",
+       "year2": "2nd year",
+       "year3": "3rd year",
+       "semester": "semester",
+       "subject": "Subject",
+       "totalEcts": "Total ECTS Credits",
+       "totalEctsFor": "Total ECTS for",
+       "distributedSemesters": "Distributed across 6 semesters (3 years of study)",
+       "rb": "No.",
+       "ects": "ECTS"
+     },
+    "softverski-inzenjering": {
+      "title": "Software Engineering",
+      "subtitle": "Curriculum - 1st cycle studies",
+      "planTitle": "Curriculum",
+      "planSubtitle": "Detailed overview of subjects for all four years of the Software Engineering program",
+      "downloadSyllabus": "Download Syllabus",
+      "year1": "1st year",
+      "year2": "2nd year",
+      "year3": "3rd year",
+      "year4": "4th year",
+      "semester": "semester",
+      "subject": "Subject",
+      "totalEcts": "Total ECTS Credits",
+      "totalEctsFor": "Total ECTS for",
+      "distributedSemesters": "Distributed across 8 semesters (4 years of study)",
+      "rb": "No.",
+      "ects": "ECTS"
+    },
+    "termini-konsultacija": {
+      "title": "Consultation Schedule",
+      "subtitle": "Schedule of consultations with teaching staff",
+      "scheduleLabel": "Consultation schedule:",
+      "facultyLocation": "Faculty of Information Technologies",
+      "importantNotes": "Important Notes",
+      "note1": "• Consultations are held on working days according to the schedule",
+      "note2": "• Please respect the schedule and announce yourself in advance if necessary",
+      "note3": "• In case of schedule changes, teachers will notify you",
+      "note4": "• Consultations are also available online by arrangement",
+      "days": {
+        "monday": "Monday",
+        "tuesday": "Tuesday",
+        "wednesday": "Wednesday",
+        "thursday": "Thursday",
+        "friday": "Friday",
+        "workingDays": "every working day"
+      }
+    }
+  },
+  "upis": {
+    "cijeneStudija": {
+      "title": "Study Fees",
+      "subtitle": "Transparent information about tuition and study costs",
+      "infoTitle": "Tuition Information",
+      "infoSubtitle": "At the Faculty of Information Technologies, we offer transparent and affordable study fees with flexible payment options.",
+      "tuitionFirstCycle": "Tuition for 1st cycle",
+      "renewalYear": "Year renewal",
+      "regularTuition": "Regular tuition",
+      "firstCycleStudy": "1st cycle studies",
+      "repeatEnrollment": "Repeat enrollment",
+      "specialArrangements": "Special payment arrangements",
+      "feeDecision": "Fee decision",
+      "tuitionDescription": "Tuition for all years of the 1st cycle is 1800.00 KM.",
+      "tuitionDetails": "Students can pay tuition in two installments of 900.00 KM each. The first installment is paid upon enrollment, and the second by the end of the calendar year (December 31st).",
+      "renewalDescription": "Students who are repeating a year pay 400.00 KM per semester + 100.00 KM for each remaining failed exam.",
+      "renewalDetails": "Students can also pay the renewal amount in two equal installments (the second installment must be paid by the winter semester validation and summer semester enrollment).",
+      "paymentOptions": "Payment Options",
+      "totalAmount": "Total amount: 1800.00 KM",
+      "firstInstallment": "First installment: 900.00 KM (upon enrollment)",
+      "secondInstallment": "Second installment: 900.00 KM (by Dec 31st)",
+      "semesterFee": "Semester: 400.00 KM",
+      "examFee": "Failed exam: 100.00 KM",
+      "twoInstallments": "Two equal installments",
+      "secondInstallmentDeadline": "Second installment by winter semester validation",
+      "specialOptions": "Special Options",
+      "specialPaymentDescription": "Students who are unable to follow the payment schedule can submit a request to the Dean for establishing a special payment plan.",
+      "feeDecisionDescription": "You can view the decision on tuition fees and other student services here.",
+      "viewDecision": "View Decision",
+      "importantNotes": "Important Notes",
+      "note1": "• First tuition installment is paid upon enrollment",
+      "note2": "• Second installment is paid by the end of the calendar year (Dec 31st)",
+      "note3": "• For year renewal, second installment is paid by winter semester validation",
+      "note4": "• In case of payment difficulties, contact the Dean's office for special arrangements"
+    },
+    "naciniStudiranja": {
+      "title": "Study Methods",
+      "subtitle": "Student status - different options for your academic journey",
+      "regularStudents": "Regular self-financing students",
+      "partTimeStudents": "Part-time students",
+      "dlStudents": "DL students",
+      "dlwmsTitle": "DLWMS modules",
+      "userProfile": "Personal user profile",
+      "teachingMaterials": "Teaching materials",
+      "studentService": "Student service",
+      "attendance": "Attendance records",
+      "videoChannel": "FIT video channel",
+      "forum": "FIT forum",
+      "onlineTeaching": "Online teaching",
+      "videoLectures": "Video lectures",
+      "studyTypesTitle": "Study methods - student status",
+      "studyTypesSubtitle": "At the Faculty of Information Technologies, candidates can enroll as regular self-financing students, DL students, or part-time students.",
+      "regularDescription": "Students who study according to a program based on full teaching hours. Attendance at all forms of classes is mandatory.",
+      "regularDetails": "Records are kept based on which the student, after completing a semester, receives a signature from the subject teacher, provided they have attended at least 70% of the subject's teaching hours.",
+      "partTimeDescription": "They attend the study program alongside work or other activities.",
+      "partTimeDetails": "The Faculty is obliged to organize classes for part-time students, at least one school hour per month per subject, using modern distance learning tools. Part-time students must fulfill all other obligations provided by the curricula.",
+      "dlDescription": "They follow classes using modern distance learning tools.",
+      "dlDetails": "The Faculty is obliged to provide at least 30% of the subject's teaching hours in a virtual classroom. All other rights and obligations of DL students are equal to regular students.",
+      "dlwmsSubtitle": "By logging into DLWMS, all students access the following system modules:",
+      "userProfileDesc": "Student information, profile, photo, access data, etc.",
+      "teachingMaterialsDesc": "Textual and multimedia documents in electronic format",
+      "studentServiceDesc": "Exam registration, certificate requests, notifications, etc.",
+      "attendanceDesc": "Class attendance, submitted work, performance, etc.",
+      "videoChannelDesc": "Multimedia materials",
+      "forumDesc": "Online communication with teaching staff and other students",
+      "examObligations": "Exam Obligations",
+      "examObligationsDesc": "All students, regardless of status, have the obligation to take exams at the Faculty in order to access the final knowledge assessment under controlled conditions.",
+      "learningResourcesTitle": "The following is available to students as a learning resource:",
+      "onlineTeachingSubtitle": "For DL and part-time students",
+      "onlineTeachingDesc": "At FIT, it is a long-standing practice for teaching staff to organize online classes and consultations according to a predetermined schedule that enables interaction between teachers and students. Classes are held at times announced in DLWMS notifications.",
+      "videoLecturesSubtitle": "Available on YouTube channel",
+      "videoLecturesDesc": "For most subjects, video lectures are available published on our YouTube channel. A survey conducted among students showed that video lectures are one of the most useful resources in exam preparation. Video lectures represent a major shift from traditional \"in-class\" studying and allow students control over video lectures and simultaneous testing of learned material. Students can learn at their own pace, review and repeat segments as needed."
+    },
+    "staUpisati": {
+      "title": "What to Enroll?",
+      "subtitle": "Faculty of Information Technologies - where the future of the digital world is created",
+      "whyTitle": "Why?",
+      "whyDescription1": "The quality and practical relevance of the study program are confirmed by the fact that, according to data from the Statistical Office, 95% of our students are employed. The IT sector represents an area that is dynamically developing and there is a constant need for this personnel in Bosnia and Herzegovina and worldwide.",
+      "whyDescription2": "FIT conducts periodic research to analyze the alignment of qualifications and skills provided by the curriculum with the needs and requirements of the market and environment. FIT has very good cooperation with state, federal and cantonal ministries operating in the education and IT sector, as well as with regional IT companies.",
+      "employment": "95% employment",
+      "employmentDesc": "According to Statistical Office data, 95% of our students are employed",
+      "dynamicDevelopment": "Dynamic development",
+      "dynamicDevelopmentDesc": "The IT sector is dynamically developing with constant need for personnel",
+      "qualityProgram": "Quality program",
+      "qualityProgramDesc": "Continuous improvement of curriculum and program",
+      "marketAlignment": "Market alignment",
+      "marketAlignmentDesc": "Periodic research on alignment with market needs",
+      "goodCooperation": "Good cooperation",
+      "goodCooperationDesc": "Cooperation with ministries and regional IT companies",
+      "continuousImprovement": "Continuous Improvement",
+      "continuousImprovementDesc": "The Faculty continuously works on improving the quality of all activities: teaching, curriculum content, assessment system, textbooks and literature, classroom and other space equipment, DL platform, scientific research activities, publishing activities, selection of teaching staff and administrative personnel, library activities, lifelong learning and other standards.",
+      "visionMessage": "Our vision of the future is secure and positive. Join us!",
+      "informatorTitle": "FIT Handbook",
+      "informatorDescription": "The FIT handbook is a guide intended for freshmen of the Faculty of Information Technologies \"Džemal Bijedić\" in Mostar, containing answers to the most frequently asked questions.",
+      "informatorPurpose": "The purpose of the handbook is to facilitate navigation in the new academic environment and provide support at the beginning of studies. The handbook was created by Adna Ćušić and Dino Burić.",
+      "downloadInformator": "Download Handbook"
+    }
   }
 } 

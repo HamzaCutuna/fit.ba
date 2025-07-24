@@ -4,74 +4,76 @@ import { motion } from 'framer-motion';
 import { Users, GraduationCap, Clock, BookOpen, Video, MessageCircle, Monitor, Calendar } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { useTranslation } from '../../../contexts/LanguageContext';
 
 const NaciniStudiranjaPage = () => {
+  const { t } = useTranslation();
   const studyTypes = [
     {
       icon: Users,
-      title: "Redovni samofinansirajući studenti",
-      description: "Studenti koji studiraju prema programu koji se zasniva na punoj nastavnoj satnici. Prisustvo svim vidovima nastave je obavezno.",
-      details: "Evidencija se vodi na osnovu koje student, po odslušanom semestru, dobija potpis od predmetnog nastavnika, pod uslovom da je odslušao minimalno 70% fonda nastavnih sati predmeta."
+      title: t('upis.naciniStudiranja.regularStudents'),
+      description: t('upis.naciniStudiranja.regularDescription'),
+      details: t('upis.naciniStudiranja.regularDetails')
     },
     {
       icon: Clock,
-      title: "Vanredni studenti",
-      description: "Studijski program pohađaju uz rad ili drugu aktivnost.",
-      details: "Fakultet je dužan organizirati nastavu za vanredne studente, minimalno jedan školski sat mjesečno po predmetu, pomoću savremenih sredstava učenja na daljinu. Vanredni student moraju izvršavati i sve ostale obaveze predviđene nastavnim programima."
+      title: t('upis.naciniStudiranja.partTimeStudents'),
+      description: t('upis.naciniStudiranja.partTimeDescription'),
+      details: t('upis.naciniStudiranja.partTimeDetails')
     },
     {
       icon: Monitor,
-      title: "DL studenti",
-      description: "Prate nastavu pomoću savremenih sredstava učenja na daljinu.",
-      details: "Fakultet je dužan obezbijediti minimalno 30% fonda nastavnih sati predmeta u virtualnoj učionici. Sva ostala prava i obaveze DL studenata su izjednačena sa redovnim studentima."
+      title: t('upis.naciniStudiranja.dlStudents'),
+      description: t('upis.naciniStudiranja.dlDescription'),
+      details: t('upis.naciniStudiranja.dlDetails')
     }
   ];
 
   const dlwmsModules = [
     {
       icon: Users,
-      title: "Vlastiti korisnički profil",
-      description: "Informacije o studentu, profil, slika, pristupni podaci itd."
+      title: t('upis.naciniStudiranja.userProfile'),
+      description: t('upis.naciniStudiranja.userProfileDesc')
     },
     {
       icon: BookOpen,
-      title: "Nastavni materijali",
-      description: "Tekstualni i multimedijalni dokumenti u elektronskom formatu"
+      title: t('upis.naciniStudiranja.teachingMaterials'),
+      description: t('upis.naciniStudiranja.teachingMaterialsDesc')
     },
     {
       icon: GraduationCap,
-      title: "Studentska služba",
-      description: "Prijava ispita, zahtjevi za potvrdama, obavijesti itd."
+      title: t('upis.naciniStudiranja.studentService'),
+      description: t('upis.naciniStudiranja.studentServiceDesc')
     },
     {
       icon: Calendar,
-      title: "Evidencija",
-      description: "Prisustvo nastavi, postavljeni radovi, uspjeh i sl."
+      title: t('upis.naciniStudiranja.attendance'),
+      description: t('upis.naciniStudiranja.attendanceDesc')
     },
     {
       icon: Video,
-      title: "FIT video kanal",
-      description: "Multimedijalni materijali"
+      title: t('upis.naciniStudiranja.videoChannel'),
+      description: t('upis.naciniStudiranja.videoChannelDesc')
     },
     {
       icon: MessageCircle,
-      title: "FIT forum",
-      description: "Online komunikacija sa nastavnim osobljem i drugim studentima"
+      title: t('upis.naciniStudiranja.forum'),
+      description: t('upis.naciniStudiranja.forumDesc')
     }
   ];
 
   const learningResources = [
     {
       icon: Monitor,
-      title: "Online nastava",
-      subtitle: "Za DL i vanredne studente",
-      description: "Na FIT-u je višegodišnja praksa da nastavno osoblje organizira online nastavu i konsultacije po unaprijed utvrđenom rasporedu koji omogućavaju interakciju nastavnika i studenata. Nastava se održava u terminu koji se najavljuje u obavijestima na DLWMS-u."
+      title: t('upis.naciniStudiranja.onlineTeaching'),
+      subtitle: t('upis.naciniStudiranja.onlineTeachingSubtitle'),
+      description: t('upis.naciniStudiranja.onlineTeachingDesc')
     },
     {
       icon: Video,
-      title: "Video lekcije",
-      subtitle: "Dostupne na YouTube kanalu",
-      description: "Za većinu predmeta dostupne su video lekcije objavljene na našem YouTube kanalu. Anketa provedena među studentima pokazala je da su video lekcije jedan od najkorisnijih resursa u pripremanju ispita. Video lekcije predstavljaju veliki preokret u odnosu na tradicionalno \"in-class\" studiranje te omogućavaju studentima kontrolu nad video lekcijama i istovremeno testiranje naučenog. Student može učiti vlastitim tempom, pregledati i ponavljati isječke po potrebi."
+      title: t('upis.naciniStudiranja.videoLectures'),
+      subtitle: t('upis.naciniStudiranja.videoLecturesSubtitle'),
+      description: t('upis.naciniStudiranja.videoLecturesDesc')
     }
   ];
 
@@ -90,10 +92,10 @@ const NaciniStudiranjaPage = () => {
             className="text-center"
           >
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Načini studiranja
+              {t('upis.naciniStudiranja.title')}
             </h1>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-              Status studenta - različite mogućnosti za vašu akademsku putanju
+              {t('upis.naciniStudiranja.subtitle')}
             </p>
           </motion.div>
         </div>
@@ -110,10 +112,10 @@ const NaciniStudiranjaPage = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Načini studiranja - status studenta
+              {t('upis.naciniStudiranja.studyTypesTitle')}
             </h2>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-              Na Fakultetu informacijskih tehnologija kandidati se mogu upisati kao redovni samofinansirajući studenti, DL studenti ili vanredni studenti.
+              {t('upis.naciniStudiranja.studyTypesSubtitle')}
             </p>
           </motion.div>
 
@@ -162,7 +164,7 @@ const NaciniStudiranjaPage = () => {
                 DLWMS - Distance Learning Web Management System
               </h3>
               <p className="text-lg text-blue-100">
-                Prijavom na DLWMS svi studenti pristupaju sljedećim modulima sistema:
+                {t('upis.naciniStudiranja.dlwmsSubtitle')}
               </p>
             </div>
 
@@ -197,10 +199,10 @@ const NaciniStudiranjaPage = () => {
             className="bg-white rounded-2xl shadow-xl p-8 mb-16"
           >
             <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
-              Obaveze polaganja ispita
+              {t('upis.naciniStudiranja.examObligations')}
             </h3>
             <p className="text-lg text-gray-700 leading-relaxed text-center">
-              Svi studenti, bez obzira na status, imaju obavezu polaganja ispita na Fakultetu kako bi u kontrolisanim uslovima pristupili finalnoj provjeri znanja.
+              {t('upis.naciniStudiranja.examObligationsDesc')}
             </p>
           </motion.div>
 
@@ -211,7 +213,7 @@ const NaciniStudiranjaPage = () => {
             transition={{ duration: 0.8, delay: 1.4 }}
           >
             <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
-              Kao izvor za učenje studentima je omogućeno sljedeće:
+              {t('upis.naciniStudiranja.learningResourcesTitle')}
             </h3>
             
             <div className="grid lg:grid-cols-2 gap-8">

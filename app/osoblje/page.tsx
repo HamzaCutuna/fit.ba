@@ -5,8 +5,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import { Mail, Phone, Building2 } from 'lucide-react';
+import { useTranslation } from '../../contexts/LanguageContext';
 
 export default function OsobljePage() {
+  const { t } = useTranslation();
   const [activeFilter, setActiveFilter] = useState('sve');
 
   const staffMembers = [
@@ -168,10 +170,10 @@ export default function OsobljePage() {
   ];
 
   const categories = [
-    { id: 'sve', name: 'Sve', count: staffMembers.length },
-    { id: 'nastavnici', name: 'Nastavnici', count: staffMembers.filter(m => m.category === 'nastavnici').length },
-    { id: 'saradnici', name: 'Saradnici', count: staffMembers.filter(m => m.category === 'saradnici').length },
-    { id: 'administracija', name: 'Administracija', count: staffMembers.filter(m => m.category === 'administracija').length }
+    { id: 'sve', name: t('staffPage.categories.all'), count: staffMembers.length },
+    { id: 'nastavnici', name: t('staffPage.categories.faculty'), count: staffMembers.filter(m => m.category === 'nastavnici').length },
+    { id: 'saradnici', name: t('staffPage.categories.associates'), count: staffMembers.filter(m => m.category === 'saradnici').length },
+    { id: 'administracija', name: t('staffPage.categories.administration'), count: staffMembers.filter(m => m.category === 'administracija').length }
   ];
 
   const filteredMembers = activeFilter === 'sve' 
@@ -195,10 +197,10 @@ export default function OsobljePage() {
             className="text-center"
           >
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-              Svo osoblje
+              {t('staffPage.title')}
             </h1>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
-              Upoznajte naše stručno osoblje koje posvećeno obrazovanju novih generacija IT stručnjaka.
+              {t('staffPage.subtitle')}
             </p>
           </motion.div>
         </div>
@@ -281,11 +283,10 @@ export default function OsobljePage() {
             viewport={{ once: true }}
             className="text-center"
           >
-            <h2 className="text-4xl font-bold text-white mb-6">Kontaktirajte nas</h2>
+            <h2 className="text-4xl font-bold text-white mb-6">{t('staffPage.contact.title')}</h2>
             <div className="w-24 h-1 bg-white mx-auto mb-8"></div>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-8">
-              Imate pitanja o našem osoblju ili želite saznati više o našim programima? 
-              Slobodno nas kontaktirajte.
+              {t('staffPage.contact.subtitle')}
             </p>
             <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
               <div className="text-center">
@@ -296,7 +297,7 @@ export default function OsobljePage() {
                   <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-white/30 transition-all duration-300">
                     <Mail className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-lg font-bold text-white mb-2">Email</h3>
+                  <h3 className="text-lg font-bold text-white mb-2">{t('staffPage.contact.email')}</h3>
                   <p className="text-blue-100 group-hover:text-white transition-colors duration-300">info@fit.ba</p>
                 </a>
               </div>
@@ -308,7 +309,7 @@ export default function OsobljePage() {
                   <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-white/30 transition-all duration-300">
                     <Phone className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-lg font-bold text-white mb-2">Telefon</h3>
+                  <h3 className="text-lg font-bold text-white mb-2">{t('staffPage.contact.phone')}</h3>
                   <p className="text-blue-100 group-hover:text-white transition-colors duration-300">+387 36 281 160</p>
                 </a>
               </div>
@@ -322,7 +323,7 @@ export default function OsobljePage() {
                   <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-white/30 transition-all duration-300">
                     <Building2 className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-lg font-bold text-white mb-2">Adresa</h3>
+                  <h3 className="text-lg font-bold text-white mb-2">{t('staffPage.contact.address')}</h3>
                   <p className="text-blue-100 group-hover:text-white transition-colors duration-300">Sjeverni logor br. 12, Mostar</p>
                 </a>
               </div>

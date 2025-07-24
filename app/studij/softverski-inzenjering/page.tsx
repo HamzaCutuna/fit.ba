@@ -5,8 +5,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, ChevronRight, Download, BookOpen, Calendar, Users } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { useTranslation } from '../../../contexts/LanguageContext';
 
 const SoftverskiInzenjeringPage = () => {
+  const { t } = useTranslation();
   const [expandedYears, setExpandedYears] = useState<number[]>([1]);
 
   const toggleYear = (year: number) => {
@@ -20,7 +22,7 @@ const SoftverskiInzenjeringPage = () => {
   const studyPlan = [
     {
       year: 1,
-      title: "1. godina",
+      title: t('studij.softverski-inzenjering.year1'),
       semesters: [
         {
           semester: 1,
@@ -49,7 +51,7 @@ const SoftverskiInzenjeringPage = () => {
     },
     {
       year: 2,
-      title: "2. godina",
+      title: t('studij.softverski-inzenjering.year2'),
       semesters: [
         {
           semester: 3,
@@ -76,7 +78,7 @@ const SoftverskiInzenjeringPage = () => {
     },
     {
       year: 3,
-      title: "3. godina",
+      title: t('studij.softverski-inzenjering.year3'),
       semesters: [
         {
           semester: 5,
@@ -103,7 +105,7 @@ const SoftverskiInzenjeringPage = () => {
     },
     {
       year: 4,
-      title: "4. godina",
+      title: t('studij.softverski-inzenjering.year4'),
       semesters: [
         {
           semester: 7,
@@ -152,10 +154,10 @@ const SoftverskiInzenjeringPage = () => {
             className="text-center"
           >
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Softverski inženjering
+              {t('studij.softverski-inzenjering.title')}
             </h1>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-              Nastavni plan i program - I ciklus studija
+              {t('studij.softverski-inzenjering.subtitle')}
             </p>
           </motion.div>
         </div>
@@ -172,10 +174,10 @@ const SoftverskiInzenjeringPage = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Nastavni plan i program
+              {t('studij.softverski-inzenjering.planTitle')}
             </h2>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto mb-8">
-              Detaljan pregled predmeta za sve četiri godine studija programa Softverski inženjering
+              {t('studij.softverski-inzenjering.planSubtitle')}
             </p>
             
             {/* Download Syllabus Button */}
@@ -188,7 +190,7 @@ const SoftverskiInzenjeringPage = () => {
               className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 shadow-lg"
             >
               <Download className="w-5 h-5 mr-2" />
-              Preuzmi silabus
+              {t('studij.softverski-inzenjering.downloadSyllabus')}
             </motion.a>
           </motion.div>
 
@@ -240,7 +242,7 @@ const SoftverskiInzenjeringPage = () => {
                             <div className="flex items-center">
                               <Calendar className="w-5 h-5 text-blue-600 mr-2" />
                               <h4 className="text-lg font-semibold text-gray-900">
-                                {semester.semester}. semestar
+                                {semester.semester}. {t('studij.softverski-inzenjering.semester')}
                               </h4>
                             </div>
 
@@ -250,13 +252,13 @@ const SoftverskiInzenjeringPage = () => {
                                 <thead className="bg-gray-50">
                                   <tr>
                                     <th className="border border-gray-200 px-4 py-3 text-left text-sm font-semibold text-gray-700">
-                                      R.B.
+                                      {t('studij.softverski-inzenjering.rb')}
                                     </th>
                                     <th className="border border-gray-200 px-4 py-3 text-left text-sm font-semibold text-gray-700">
-                                      Predmet
+                                      {t('studij.softverski-inzenjering.subject')}
                                     </th>
                                     <th className="border border-gray-200 px-4 py-3 text-center text-sm font-semibold text-gray-700">
-                                      ECTS
+                                      {t('studij.softverski-inzenjering.ects')}
                                     </th>
                                   </tr>
                                 </thead>
@@ -283,7 +285,7 @@ const SoftverskiInzenjeringPage = () => {
                                 <tfoot className="bg-blue-50">
                                   <tr>
                                     <td colSpan={2} className="border border-gray-200 px-4 py-3 text-sm font-semibold text-gray-700">
-                                      Ukupno ECTS za {semester.semester}. semestar:
+                                      {t('studij.softverski-inzenjering.totalEctsFor')} {semester.semester}. {t('studij.softverski-inzenjering.semester')}:
                                     </td>
                                     <td className="border border-gray-200 px-4 py-3 text-sm font-bold text-center text-blue-600">
                                       {semester.subjects.reduce((total, subject) => total + subject.ects, 0)}
@@ -312,13 +314,13 @@ const SoftverskiInzenjeringPage = () => {
             <div className="text-center">
               <Users className="w-12 h-12 mx-auto mb-4 text-blue-200" />
               <h3 className="text-2xl font-bold mb-4">
-                Ukupan broj ECTS bodova
+                {t('studij.softverski-inzenjering.totalEcts')}
               </h3>
               <p className="text-3xl font-bold text-blue-100">
-                {studyPlan.reduce((total, year) => total + calculateTotalECTS(year), 0)} ECTS
+                {studyPlan.reduce((total, year) => total + calculateTotalECTS(year), 0)} {t('studij.softverski-inzenjering.ects')}
               </p>
               <p className="text-blue-200 mt-2">
-                Raspoređeno kroz 8 semestara (4 godine studija)
+                {t('studij.softverski-inzenjering.distributedSemesters')}
               </p>
             </div>
           </motion.div>

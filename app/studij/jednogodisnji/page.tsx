@@ -4,12 +4,14 @@ import { motion } from 'framer-motion';
 import { Download, BookOpen, Calendar, Users, GraduationCap } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { useTranslation } from '../../../contexts/LanguageContext';
 
 const JednogodisnjiPage = () => {
+  const { t } = useTranslation();
   const studyPlan = [
     {
       year: 1,
-      title: "1. godina",
+      title: t('studij.jednogodisnji.year1'),
       semesters: [
         {
           semester: 1,
@@ -53,10 +55,10 @@ const JednogodisnjiPage = () => {
             className="text-center"
           >
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Jednogodišnji master
+              {t('studij.jednogodisnji.title')}
             </h1>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-              Nastavni plan i program - II ciklus studija (60 ECTS)
+              {t('studij.jednogodisnji.subtitle')}
             </p>
           </motion.div>
         </div>
@@ -73,10 +75,10 @@ const JednogodisnjiPage = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Nastavni plan i program
+              {t('studij.jednogodisnji.planTitle')}
             </h2>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto mb-8">
-              Detaljan pregled predmeta za jednogodišnji master program (60 ECTS)
+              {t('studij.jednogodisnji.planSubtitle')}
             </p>
             
             {/* Download Syllabus Button */}
@@ -89,7 +91,7 @@ const JednogodisnjiPage = () => {
               className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 shadow-lg"
             >
               <Download className="w-5 h-5 mr-2" />
-              Preuzmi silabus
+              {t('studij.jednogodisnji.downloadSyllabus')}
             </motion.a>
           </motion.div>
 
@@ -105,7 +107,7 @@ const JednogodisnjiPage = () => {
               <div className="flex items-center">
                 <BookOpen className="w-6 h-6 text-white mr-3" />
                 <h3 className="text-xl font-bold text-white">
-                  Jednogodišnji master program
+                  {t('studij.jednogodisnji.masterProgram')}
                 </h3>
                 <span className="ml-4 px-3 py-1 bg-white/20 rounded-full text-sm text-white">
                   {calculateTotalECTS(studyPlan[0])} ECTS
@@ -119,18 +121,18 @@ const JednogodisnjiPage = () => {
                 <table className="w-full border-collapse border border-gray-200 rounded-lg overflow-hidden">
                   <thead className="bg-gray-50">
                     <tr>
-                      <th className="border border-gray-200 px-4 py-3 text-left text-sm font-semibold text-gray-700">
-                        Semestar
-                      </th>
-                      <th className="border border-gray-200 px-4 py-3 text-left text-sm font-semibold text-gray-700">
-                        Predmet
-                      </th>
-                      <th className="border border-gray-200 px-4 py-3 text-center text-sm font-semibold text-gray-700">
-                        Izborni
-                      </th>
-                      <th className="border border-gray-200 px-4 py-3 text-center text-sm font-semibold text-gray-700">
-                        ECTS
-                      </th>
+                                          <th className="border border-gray-200 px-4 py-3 text-left text-sm font-semibold text-gray-700">
+                      {t('studij.jednogodisnji.semester')}
+                    </th>
+                    <th className="border border-gray-200 px-4 py-3 text-left text-sm font-semibold text-gray-700">
+                      {t('studij.jednogodisnji.subject')}
+                    </th>
+                    <th className="border border-gray-200 px-4 py-3 text-center text-sm font-semibold text-gray-700">
+                      {t('studij.jednogodisnji.elective')}
+                    </th>
+                    <th className="border border-gray-200 px-4 py-3 text-center text-sm font-semibold text-gray-700">
+                      {t('studij.jednogodisnji.totalEcts')}
+                    </th>
                     </tr>
                   </thead>
                   <tbody>
@@ -149,7 +151,7 @@ const JednogodisnjiPage = () => {
                             {subject.name}
                           </td>
                           <td className="border border-gray-200 px-4 py-3 text-sm font-medium text-center text-gray-600">
-                            {subject.elective ? 'Da' : 'Ne'}
+                            {subject.elective ? t('studij.jednogodisnji.yes') : t('studij.jednogodisnji.no')}
                           </td>
                           <td className="border border-gray-200 px-4 py-3 text-sm font-medium text-center text-blue-600">
                             {subject.ects}
@@ -160,9 +162,9 @@ const JednogodisnjiPage = () => {
                   </tbody>
                   <tfoot className="bg-blue-50">
                     <tr>
-                      <td colSpan={3} className="border border-gray-200 px-4 py-3 text-sm font-semibold text-gray-700">
-                        Ukupno ECTS:
-                      </td>
+                                          <td colSpan={3} className="border border-gray-200 px-4 py-3 text-sm font-semibold text-gray-700">
+                      {t('studij.jednogodisnji.totalEcts')}:
+                    </td>
                       <td className="border border-gray-200 px-4 py-3 text-sm font-bold text-center text-blue-600">
                         {calculateTotalECTS(studyPlan[0])}
                       </td>
@@ -185,7 +187,7 @@ const JednogodisnjiPage = () => {
               <div className="flex items-center mb-4">
                 <Calendar className="w-6 h-6 text-blue-600 mr-3" />
                 <h4 className="text-lg font-semibold text-gray-900">
-                  1. semestar
+                  1. {t('studij.jednogodisnji.semester')}
                 </h4>
               </div>
               <div className="space-y-3">
@@ -208,8 +210,8 @@ const JednogodisnjiPage = () => {
               </div>
               <div className="mt-4 pt-4 border-t border-gray-100">
                 <div className="flex justify-between items-center">
-                  <span className="text-sm font-semibold text-gray-700">Ukupno 1. semestar:</span>
-                  <span className="text-sm font-bold text-blue-600">33 ECTS</span>
+                  <span className="text-sm font-semibold text-gray-700">{t('studij.jednogodisnji.totalEctsFor')} 1. {t('studij.jednogodisnji.semester')}:</span>
+                  <span className="text-sm font-bold text-blue-600">33 {t('studij.jednogodisnji.totalEcts')}</span>
                 </div>
               </div>
             </div>
@@ -219,7 +221,7 @@ const JednogodisnjiPage = () => {
               <div className="flex items-center mb-4">
                 <GraduationCap className="w-6 h-6 text-blue-600 mr-3" />
                 <h4 className="text-lg font-semibold text-gray-900">
-                  2. semestar
+                  2. {t('studij.jednogodisnji.semester')}
                 </h4>
               </div>
               <div className="space-y-3">
@@ -230,8 +232,8 @@ const JednogodisnjiPage = () => {
               </div>
               <div className="mt-4 pt-4 border-t border-gray-100">
                 <div className="flex justify-between items-center">
-                  <span className="text-sm font-semibold text-gray-700">Ukupno 2. semestar:</span>
-                  <span className="text-sm font-bold text-blue-600">27 ECTS</span>
+                  <span className="text-sm font-semibold text-gray-700">{t('studij.jednogodisnji.totalEctsFor')} 2. {t('studij.jednogodisnji.semester')}:</span>
+                  <span className="text-sm font-bold text-blue-600">27 {t('studij.jednogodisnji.totalEcts')}</span>
                 </div>
               </div>
             </div>
@@ -247,23 +249,23 @@ const JednogodisnjiPage = () => {
             <div className="text-center">
               <Users className="w-12 h-12 mx-auto mb-4 text-blue-200" />
               <h3 className="text-2xl font-bold mb-4">
-                Jednogodišnji master program
+                {t('studij.jednogodisnji.masterProgram')}
               </h3>
               <div className="max-w-3xl mx-auto space-y-4">
                 <p className="text-3xl font-bold text-blue-100">
-                  {calculateTotalECTS(studyPlan[0])} ECTS
+                  {calculateTotalECTS(studyPlan[0])} {t('studij.jednogodisnji.totalEcts')}
                 </p>
                 <p className="text-blue-200">
-                  Raspoređeno kroz 2 semestra (1 godina studija)
+                  {t('studij.jednogodisnji.distributedSemesters')}
                 </p>
                 <div className="grid md:grid-cols-2 gap-4 mt-6">
                   <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                    <p className="text-sm text-blue-200">1. semestar</p>
-                    <p className="text-lg font-bold text-white">33 ECTS</p>
+                    <p className="text-sm text-blue-200">1. {t('studij.jednogodisnji.semester')}</p>
+                    <p className="text-lg font-bold text-white">33 {t('studij.jednogodisnji.totalEcts')}</p>
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                    <p className="text-sm text-blue-200">2. semestar</p>
-                    <p className="text-lg font-bold text-white">27 ECTS</p>
+                    <p className="text-sm text-blue-200">2. {t('studij.jednogodisnji.semester')}</p>
+                    <p className="text-lg font-bold text-white">27 {t('studij.jednogodisnji.totalEcts')}</p>
                   </div>
                 </div>
               </div>

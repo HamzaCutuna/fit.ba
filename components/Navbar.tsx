@@ -6,8 +6,10 @@ import { Menu, X, ChevronDown } from 'lucide-react';
 import { Transition } from '@headlessui/react';
 import Link from 'next/link';
 import LanguageSwitcher from './LanguageSwitcher';
+import { useTranslation } from '../contexts/LanguageContext';
 
 const Navbar = () => {
+  const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isFakultetDropdownOpen, setIsFakultetDropdownOpen] = useState(false);
@@ -26,42 +28,42 @@ const Navbar = () => {
 
   const menuItems = [
     { 
-      name: 'Fakultet', 
+      name: t('navbar.faculty'), 
       href: '#',
       hasDropdown: true,
       dropdownItems: [
-        { name: 'O fakultetu', href: '/fakultet' },
-        { name: 'Osoblje', href: '/osoblje' },
+        { name: t('navbar.aboutFaculty'), href: '/fakultet' },
+        { name: t('navbar.staff'), href: '/osoblje' },
       ]
     },
     { 
-      name: 'Upis', 
+      name: t('navbar.enrollment'), 
       href: '#',
       hasDropdown: true,
       dropdownItems: [
-        { name: 'Šta upisati?', href: '/upis/sta-upisati' },
-        { name: 'Načini studiranja', href: '/upis/nacini-studiranja' },
-        { name: 'Cijene studija', href: '/upis/cijene-studija' }
+        { name: t('navbar.whatToEnroll'), href: '/upis/sta-upisati' },
+        { name: t('navbar.studyMethods'), href: '/upis/nacini-studiranja' },
+        { name: t('navbar.studyPrices'), href: '/upis/cijene-studija' }
       ]
     },
     { 
-      name: 'Studij', 
+      name: t('navbar.studies'), 
       href: '#',
       hasDropdown: true,
       dropdownItems: [
-        { name: 'I ciklus', href: '#', isSeparator: true, key: 'i-ciklus-separator' },
-        { name: 'Pravila studiranja', href: '/documents/pravila-studiranja-prvi-ciklus.pdf', key: 'pravila-studiranja-i', target: '_blank' },
-        { name: 'Nastavni plan i program - Razvoj softvera', href: '/studij/razvoj-softvera', key: 'razvoj-softvera' },
-        { name: 'Nastavni plan i program - Softverski inženjering', href: '/studij/softverski-inzenjering', key: 'softverski-inzenjering' },
-        { name: 'Termini konsultacija sa studentima', href: '/studij/termini-konsultacija', key: 'termini-konsultacija' },
-        { name: 'II ciklus', href: '#', isSeparator: true, key: 'ii-ciklus-separator' },
-        { name: 'Pravila studiranja', href: '/documents/pravila-studiranja-drugi-ciklus.pdf', key: 'pravila-studiranja-ii', target: '_blank' },
-        { name: 'Nastavni plan i program - jednogodišnji (60 ECTS)', href: '/studij/jednogodisnji', key: 'jednogodisnji' },
-        { name: 'Nastavni plan i program za drugi ciklus - dvogodišnji (120 ECTS)', href: '/studij/dvogodisnji', key: 'dvogodisnji' }
+        { name: t('navbar.firstCycle'), href: '#', isSeparator: true, key: 'i-ciklus-separator' },
+        { name: t('navbar.studyRules'), href: '/documents/pravila-studiranja-prvi-ciklus.pdf', key: 'pravila-studiranja-i', target: '_blank' },
+        { name: t('navbar.curriculumSoftwareDev'), href: '/studij/razvoj-softvera', key: 'razvoj-softvera' },
+        { name: t('navbar.curriculumSoftwareEng'), href: '/studij/softverski-inzenjering', key: 'softverski-inzenjering' },
+        { name: t('navbar.consultationTerms'), href: '/studij/termini-konsultacija', key: 'termini-konsultacija' },
+        { name: t('navbar.secondCycle'), href: '#', isSeparator: true, key: 'ii-ciklus-separator' },
+        { name: t('navbar.studyRules'), href: '/documents/pravila-studiranja-drugi-ciklus.pdf', key: 'pravila-studiranja-ii', target: '_blank' },
+        { name: t('navbar.curriculumOneYear'), href: '/studij/jednogodisnji', key: 'jednogodisnji' },
+        { name: t('navbar.curriculumTwoYear'), href: '/studij/dvogodisnji', key: 'dvogodisnji' }
       ]
     },
-    { name: 'Vijesti', href: '/vijesti' },
-    { name: 'Kontakt', href: '/kontakt' },
+    { name: t('navbar.news'), href: '/vijesti' },
+    { name: t('navbar.contact'), href: '/kontakt' },
   ];
 
   return (
@@ -85,8 +87,8 @@ const Navbar = () => {
                 !isScrolled ? 'text-white' : ''
               }`}
             >
-              <span className="hidden sm:inline">Fakultet informacijskih tehnologija</span>
-              <span className="sm:hidden">FIT, Mostar</span>
+              <span className="hidden sm:inline">{t('navbar.logo')}</span>
+              <span className="sm:hidden">{t('navbar.logoShort')}</span>
             </Link>
           </motion.div>
 
@@ -104,14 +106,14 @@ const Navbar = () => {
                   {item.hasDropdown ? (
                     <div
                       onMouseEnter={() => {
-                        if (item.name === 'Fakultet') setIsFakultetDropdownOpen(true);
-                        if (item.name === 'Upis') setIsUpisDropdownOpen(true);
-                        if (item.name === 'Studij') setIsStudijDropdownOpen(true);
+                        if (item.name === t('navbar.faculty')) setIsFakultetDropdownOpen(true);
+                        if (item.name === t('navbar.enrollment')) setIsUpisDropdownOpen(true);
+                        if (item.name === t('navbar.studies')) setIsStudijDropdownOpen(true);
                       }}
                       onMouseLeave={() => {
-                        if (item.name === 'Fakultet') setIsFakultetDropdownOpen(false);
-                        if (item.name === 'Upis') setIsUpisDropdownOpen(false);
-                        if (item.name === 'Studij') setIsStudijDropdownOpen(false);
+                        if (item.name === t('navbar.faculty')) setIsFakultetDropdownOpen(false);
+                        if (item.name === t('navbar.enrollment')) setIsUpisDropdownOpen(false);
+                        if (item.name === t('navbar.studies')) setIsStudijDropdownOpen(false);
                       }}
                       className="relative"
                     >
@@ -124,9 +126,9 @@ const Navbar = () => {
                       >
                         <span>{item.name}</span>
                         <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
-                          (item.name === 'Fakultet' && isFakultetDropdownOpen) || 
-                          (item.name === 'Upis' && isUpisDropdownOpen) ||
-                          (item.name === 'Studij' && isStudijDropdownOpen) ? 'rotate-180' : ''
+                          (item.name === t('navbar.faculty') && isFakultetDropdownOpen) || 
+                          (item.name === t('navbar.enrollment') && isUpisDropdownOpen) ||
+                          (item.name === t('navbar.studies') && isStudijDropdownOpen) ? 'rotate-180' : ''
                         }`} />
                         <span className={`absolute bottom-0 left-1/2 w-0 h-0.5 transition-all duration-300 group-hover:w-full group-hover:left-0 ${
                           isScrolled 
@@ -136,9 +138,9 @@ const Navbar = () => {
                       </button>
                       
                       <AnimatePresence>
-                        {((item.name === 'Fakultet' && isFakultetDropdownOpen) || 
-                          (item.name === 'Upis' && isUpisDropdownOpen) ||
-                          (item.name === 'Studij' && isStudijDropdownOpen)) && (
+                        {((item.name === t('navbar.faculty') && isFakultetDropdownOpen) || 
+                          (item.name === t('navbar.enrollment') && isUpisDropdownOpen) ||
+                          (item.name === t('navbar.studies') && isStudijDropdownOpen)) && (
                           <motion.div
                             initial={{ opacity: 0, y: 10, scale: 0.95 }}
                             animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -194,7 +196,8 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="lg:hidden flex-shrink-0">
+          <div className="lg:hidden flex-shrink-0 flex items-center space-x-2">
+            <LanguageSwitcher isScrolled={isScrolled} />
             <motion.button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               whileHover={{ scale: 1.05 }}
@@ -230,23 +233,23 @@ const Navbar = () => {
                   <div>
                     <button
                       onClick={() => {
-                        if (item.name === 'Fakultet') setIsFakultetDropdownOpen(!isFakultetDropdownOpen);
-                        if (item.name === 'Upis') setIsUpisDropdownOpen(!isUpisDropdownOpen);
-                        if (item.name === 'Studij') setIsStudijDropdownOpen(!isStudijDropdownOpen);
+                        if (item.name === t('navbar.faculty')) setIsFakultetDropdownOpen(!isFakultetDropdownOpen);
+                        if (item.name === t('navbar.enrollment')) setIsUpisDropdownOpen(!isUpisDropdownOpen);
+                        if (item.name === t('navbar.studies')) setIsStudijDropdownOpen(!isStudijDropdownOpen);
                       }}
                       className="flex items-center justify-between w-full text-gray-700 hover:text-blue-600 text-lg font-medium transition-colors duration-200 py-2 border-b border-gray-50"
                     >
                       <span>{item.name}</span>
                       <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
-                        (item.name === 'Fakultet' && isFakultetDropdownOpen) || 
-                        (item.name === 'Upis' && isUpisDropdownOpen) ||
-                        (item.name === 'Studij' && isStudijDropdownOpen) ? 'rotate-180' : ''
+                        (item.name === t('navbar.faculty') && isFakultetDropdownOpen) || 
+                        (item.name === t('navbar.enrollment') && isUpisDropdownOpen) ||
+                        (item.name === t('navbar.studies') && isStudijDropdownOpen) ? 'rotate-180' : ''
                       }`} />
                     </button>
                     <AnimatePresence>
-                      {((item.name === 'Fakultet' && isFakultetDropdownOpen) || 
-                        (item.name === 'Upis' && isUpisDropdownOpen) ||
-                        (item.name === 'Studij' && isStudijDropdownOpen)) && (
+                      {((item.name === t('navbar.faculty') && isFakultetDropdownOpen) || 
+                        (item.name === t('navbar.enrollment') && isUpisDropdownOpen) ||
+                        (item.name === t('navbar.studies') && isStudijDropdownOpen)) && (
                         <motion.div
                           initial={{ opacity: 0, height: 0 }}
                           animate={{ opacity: 1, height: 'auto' }}

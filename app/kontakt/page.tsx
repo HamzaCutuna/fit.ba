@@ -5,13 +5,42 @@ import { Mail, Phone, Clock, MapPin, Users, HeadphonesIcon, BookOpen, ChevronDow
 import { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { useTranslation } from '../../contexts/LanguageContext';
 
 const KontaktPage = () => {
+  const { t } = useTranslation();
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+
+  const faqData = [
+    {
+      question: t('contact.faqItems.0.question') || 'Kako mogu kontaktirati studentsku službu?',
+      answer: t('contact.faqItems.0.answer') || 'Studentska služba je dostupna putem email-a na esluzba@edu.fit.ba ili telefonom na +38736/281-160. Radno vrijeme je ponedjeljak-petak od 11h do 14h.'
+    },
+    {
+      question: t('contact.faqItems.1.question') || 'Koji su načini plaćanja školarine?',
+      answer: t('contact.faqItems.1.answer') || 'Informacije o plaćanju školarine možete dobiti kontaktiranjem studentske službe ili prodekana za nastavu.'
+    },
+    {
+      question: t('contact.faqItems.2.question') || 'Kako mogu dobiti tehničku podršku?',
+      answer: t('contact.faqItems.2.answer') || 'Tehnička podrška je dostupna putem email-a na tehnicka.podrska@edu.fit.ba za sve pitanja vezana za Office 365, Microsoft Imagine i domenu.'
+    },
+    {
+      question: t('contact.faqItems.3.question') || 'Kada je radno vrijeme fakulteta?',
+      answer: t('contact.faqItems.3.answer') || 'Studentska služba radi ponedjeljak-petak od 11h do 14h. Za ostale službe, kontaktirajte direktno odgovorne osobe.'
+    },
+    {
+      question: t('contact.faqItems.4.question') || 'Kako mogu dobiti pristup DLWMS sistemu?',
+      answer: t('contact.faqItems.4.answer') || 'Za pristup DLWMS sistemu i tehničku podršku, kontaktirajte dlwms.podrska@edu.fit.ba.'
+    },
+    {
+      question: t('contact.faqItems.5.question') || 'Kako mogu zakazati sastanak s dekanom?',
+      answer: t('contact.faqItems.5.answer') || 'Za sastanak s dekanom prof. dr. Ninom Bijedić, kontaktirajte je direktno na nbijedic@edu.fit.ba ili telefonom +38736/281-172.'
+    }
+  ];
 
   const contactInfo = [
         {
-            title: 'Dekan',
+            title: t('contact.positions.dean'),
             name: 'prof. dr. Nina Bijedić',
             email: 'nbijedic@edu.fit.ba',
             phone: '+387 36/281-172',
@@ -19,7 +48,7 @@ const KontaktPage = () => {
             category: 'leadership'
         },
         {
-            title: 'Prodekan za nastavu',
+            title: t('contact.positions.viceDeanTeaching'),
             name: 'doc. dr. Iris Memić-Fišić',
             email: 'prodekan.nastava@edu.fit.ba',
             email2: 'iris@edu.fit.ba',
@@ -28,59 +57,32 @@ const KontaktPage = () => {
             category: 'leadership'
         },
         {
-            title: 'Prodekan za naučno-istraživački rad',
+            title: t('contact.positions.viceDeanResearch'),
             email: 'prodekan.nir@edu.fit.ba',
             icon: Users,
             category: 'leadership'
         },
         {
-            title: 'Studentska služba',
+            title: t('contact.positions.studentService'),
             name: 'Lejla Jazvin',
             email: 'esluzba@edu.fit.ba',
             phone: '+387 36/281-160',
-            workingHours: 'Pon-Pet 11h-14h',
+            workingHours: t('contact.workingHours.studentService'),
             icon: BookOpen,
             category: 'services'
         },
         {
-            title: 'Tehnička podrška',
-            services: 'Office 365 servis | Microsoft Imagine | Domena',
+            title: t('contact.positions.techSupport'),
+            services: t('contact.services.office365'),
             email: 'tehnicka.podrska@edu.fit.ba',
             icon: HeadphonesIcon,
             category: 'support'
         },
         {
-            title: 'DLWMS podrška',
+            title: t('contact.positions.dlwmsSupport'),
             email: 'dlwms.podrska@edu.fit.ba',
             icon: HeadphonesIcon,
             category: 'support'
-        }
-    ];
-
-    const faqData = [
-        {
-            question: 'Kako mogu kontaktirati studentsku službu?',
-            answer: 'Studentska služba je dostupna putem email-a na esluzba@edu.fit.ba ili telefonom na +38736/281-160. Radno vrijeme je ponedjeljak-petak od 11h do 14h.'
-        },
-        {
-            question: 'Koji su načini plaćanja školarine?',
-            answer: 'Informacije o plaćanju školarine možete dobiti kontaktiranjem studentske službe ili prodekana za nastavu.'
-        },
-        {
-            question: 'Kako mogu dobiti tehničku podršku?',
-            answer: 'Tehnička podrška je dostupna putem email-a na tehnicka.podrska@edu.fit.ba za sve pitanja vezana za Office 365, Microsoft Imagine i domenu.'
-        },
-        {
-            question: 'Kada je radno vrijeme fakulteta?',
-            answer: 'Studentska služba radi ponedjeljak-petak od 11h do 14h. Za ostale službe, kontaktirajte direktno odgovorne osobe.'
-        },
-        {
-            question: 'Kako mogu dobiti pristup DLWMS sistemu?',
-            answer: 'Za pristup DLWMS sistemu i tehničku podršku, kontaktirajte dlwms.podrska@edu.fit.ba.'
-        },
-        {
-            question: 'Kako mogu zakazati sastanak s dekanom?',
-            answer: 'Za sastanak s dekanom prof. dr. Ninom Bijedić, kontaktirajte je direktno na nbijedic@edu.fit.ba ili telefonom +38736/281-172.'
         }
     ];
 
@@ -98,10 +100,10 @@ const KontaktPage = () => {
                         className="text-center"
                     >
                         <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                            Kontakt
+                            {t('contact.title')}
                         </h1>
                         <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-                            Stupite u kontakt s nama. Naš tim je tu da vam pomogne u svim pitanjima vezanim za studij i fakultet.
+                            {t('contact.subtitle')}
                         </p>
                     </motion.div>
                 </div>
@@ -192,10 +194,10 @@ const KontaktPage = () => {
                         className="text-center mb-12"
                     >
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                            Lokacija
+                            {t('contact.location')}
                         </h2>
                         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                            Pronađite nas na našoj lokaciji u Mostaru
+                            {t('contact.locationSubtitle')}
                         </p>
                     </motion.div>
 
@@ -220,7 +222,7 @@ const KontaktPage = () => {
                             <div className="flex items-center justify-center">
                                 <MapPin className="w-5 h-5 text-blue-600 mr-2" />
                                 <span className="text-gray-700 font-medium">
-                                    Fakultet informacijskih tehnologija, Mostar, Bosna i Hercegovina
+                                    {t('contact.locationText')}
                                 </span>
                             </div>
                         </div>
@@ -238,10 +240,10 @@ const KontaktPage = () => {
                         className="text-center mb-16"
                     >
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                            Često postavljena pitanja
+                            {t('contact.faq')}
                         </h2>
                         <p className="text-lg text-gray-600">
-                            Odgovori na najčešća pitanja naših studenata
+                            {t('contact.faqSubtitle')}
                         </p>
                     </motion.div>
 

@@ -5,8 +5,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, ChevronRight, Download, BookOpen, Calendar, Users } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { useTranslation } from '../../../contexts/LanguageContext';
 
 const RazvojSoftveraPage = () => {
+  const { t } = useTranslation();
   const [expandedYears, setExpandedYears] = useState<number[]>([1]);
 
   const toggleYear = (year: number) => {
@@ -20,7 +22,7 @@ const RazvojSoftveraPage = () => {
   const studyPlan = [
     {
       year: 1,
-      title: "1. godina",
+      title: t('studij.razvoj-softvera.year1'),
       semesters: [
         {
           semester: 1,
@@ -49,7 +51,7 @@ const RazvojSoftveraPage = () => {
     },
     {
       year: 2,
-      title: "2. godina",
+      title: t('studij.razvoj-softvera.year2'),
       semesters: [
         {
           semester: 3,
@@ -76,7 +78,7 @@ const RazvojSoftveraPage = () => {
     },
     {
       year: 3,
-      title: "3. godina",
+      title: t('studij.razvoj-softvera.year3'),
       semesters: [
         {
           semester: 5,
@@ -126,10 +128,10 @@ const RazvojSoftveraPage = () => {
             className="text-center"
           >
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Razvoj softvera
+              {t('studij.razvoj-softvera.title')}
             </h1>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-              Nastavni plan i program - I ciklus studija
+              {t('studij.razvoj-softvera.subtitle')}
             </p>
           </motion.div>
         </div>
@@ -146,10 +148,10 @@ const RazvojSoftveraPage = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Nastavni plan i program
+              {t('studij.razvoj-softvera.planTitle')}
             </h2>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto mb-8">
-              Detaljan pregled predmeta za sve tri godine studija programa Razvoj softvera
+              {t('studij.razvoj-softvera.planSubtitle')}
             </p>
             
             {/* Download Syllabus Button */}
@@ -162,7 +164,7 @@ const RazvojSoftveraPage = () => {
               className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 shadow-lg"
             >
               <Download className="w-5 h-5 mr-2" />
-              Preuzmi silabus
+              {t('studij.razvoj-softvera.downloadSyllabus')}
             </motion.a>
           </motion.div>
 
@@ -214,7 +216,7 @@ const RazvojSoftveraPage = () => {
                             <div className="flex items-center">
                               <Calendar className="w-5 h-5 text-blue-600 mr-2" />
                               <h4 className="text-lg font-semibold text-gray-900">
-                                {semester.semester}. semestar
+                                {semester.semester}. {t('studij.razvoj-softvera.semester')}
                               </h4>
                             </div>
 
@@ -224,13 +226,13 @@ const RazvojSoftveraPage = () => {
                                 <thead className="bg-gray-50">
                                   <tr>
                                     <th className="border border-gray-200 px-4 py-3 text-left text-sm font-semibold text-gray-700">
-                                      R.B.
+                                      {t('studij.razvoj-softvera.rb')}
                                     </th>
                                     <th className="border border-gray-200 px-4 py-3 text-left text-sm font-semibold text-gray-700">
-                                      Predmet
+                                      {t('studij.razvoj-softvera.subject')}
                                     </th>
                                     <th className="border border-gray-200 px-4 py-3 text-center text-sm font-semibold text-gray-700">
-                                      ECTS
+                                      {t('studij.razvoj-softvera.ects')}
                                     </th>
                                   </tr>
                                 </thead>
@@ -257,7 +259,7 @@ const RazvojSoftveraPage = () => {
                                 <tfoot className="bg-blue-50">
                                   <tr>
                                     <td colSpan={2} className="border border-gray-200 px-4 py-3 text-sm font-semibold text-gray-700">
-                                      Ukupno ECTS za {semester.semester}. semestar:
+                                      {t('studij.razvoj-softvera.totalEctsFor')} {semester.semester}. {t('studij.razvoj-softvera.semester')}:
                                     </td>
                                     <td className="border border-gray-200 px-4 py-3 text-sm font-bold text-center text-blue-600">
                                       {semester.subjects.reduce((total, subject) => total + subject.ects, 0)}
@@ -286,13 +288,13 @@ const RazvojSoftveraPage = () => {
             <div className="text-center">
               <Users className="w-12 h-12 mx-auto mb-4 text-blue-200" />
               <h3 className="text-2xl font-bold mb-4">
-                Ukupan broj ECTS bodova
+                {t('studij.razvoj-softvera.totalEcts')}
               </h3>
               <p className="text-3xl font-bold text-blue-100">
-                {studyPlan.reduce((total, year) => total + calculateTotalECTS(year), 0)} ECTS
+                {studyPlan.reduce((total, year) => total + calculateTotalECTS(year), 0)} {t('studij.razvoj-softvera.ects')}
               </p>
               <p className="text-blue-200 mt-2">
-                Raspoređeno kroz 6 semestara (3 godine studija)
+                {t('studij.razvoj-softvera.distributedSemesters')}
               </p>
             </div>
           </motion.div>

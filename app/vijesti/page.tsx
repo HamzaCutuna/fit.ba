@@ -1,57 +1,72 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Calendar, ArrowRight, Clock, User, Tag } from 'lucide-react';
+import { Calendar, ArrowRight, User, Tag } from 'lucide-react';
 import { Dialog, Transition } from '@headlessui/react';
 import { Fragment, useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { useTranslation } from '../../contexts/LanguageContext';
 
 const VijestiPage = () => {
+  const { t } = useTranslation();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedNews, setSelectedNews] = useState<typeof featuredNews | null>(null);
 
+  // Function to translate dates
+  const translateDate = (dateStr: string) => {
+    return dateStr
+      .replace(/januar/g, t('months.january'))
+      .replace(/februar/g, t('months.february'))
+      .replace(/mart/g, t('months.march'))
+      .replace(/april/g, t('months.april'))
+      .replace(/maj/g, t('months.may'))
+      .replace(/juni/g, t('months.june'))
+      .replace(/juli/g, t('months.july'))
+      .replace(/august/g, t('months.august'))
+      .replace(/septembar/g, t('months.september'))
+      .replace(/oktobar/g, t('months.october'))
+      .replace(/novembar/g, t('months.november'))
+      .replace(/decembar/g, t('months.december'));
+  };
+
   const featuredNews = {
-    title: "Kolektivni godišnji odmor",
-    date: "18. juli 2025.",
+    title: t('news.items.vacationTitle'),
+    date: translateDate("18. juli 2025."),
     author: "FIT Mostar",
-    category: "Obavještenja",
-    readTime: "1 min",
-    description: "Kolektivni godišnji odmor na Fakultetu informacijskih tehnologija Univerziteta \"Džemal Bijedić\" u Mostaru počinje u ponedjeljak, 21.7.2025. godine.",
-    fullContent: "Kolektivni godišnji odmor na Fakultetu informacijskih tehnologija Univerziteta \"Džemal Bijedić\" u Mostaru počinje u ponedjeljak, 21.7.2025. godine. Obavještavamo studente da Fakultet neće raditi do 18.8.2025. godine. PRIJATAN ODMOR SVIMA!",
+    category: t('news.categories.announcements'),
+    description: t('news.items.vacationExcerpt'),
+    fullContent: t('news.items.vacationExcerpt') + " Obavještavamo studente da Fakultet neće raditi do 18.8.2025. godine. PRIJATAN ODMOR SVIMA!",
     image: "/images/fit1.png"
   };
 
   const recentNews = [
     {
-      title: "Obavještenje o upisu primljenih kandidata u prvu godinu I ciklusa studija u ak. 2025/2026 godini",
-      date: "11. juli 2025.",
-      category: "Obavještenja",
+      title: t('news.items.enrollmentTitle'),
+      date: translateDate("11. juli 2025."),
+      category: t('news.categories.announcements'),
       image: "/images/fit2.jpg",
-      description: "Objavljujemo obavještenje o upisu primljenih kandidata u prvu godinu I ciklusa studija.",
-      fullContent: "Objavljujemo obavještenje o upisu primljenih kandidata u prvu godinu I ciklusa studija u akademskoj 2025/2026 godini. Svi primljeni kandidati će biti obaviješteni o daljnjem postupku upisa.",
-      author: "FIT Mostar",
-      readTime: "2 min"
+      description: t('news.items.enrollmentExcerpt'),
+      fullContent: t('news.items.enrollmentExcerpt') + " Svi primljeni kandidati će biti obaviješteni o daljnjem postupku upisa.",
+      author: "FIT Mostar"
     },
     {
-      title: "Konačna rang lista za upis primljenih kandidata u prvu godinu I ciklusa studija (ak. 2025/2026)",
-      date: "10. juli 2025.",
-      category: "Upis",
+      title: t('news.items.rankListTitle'),
+      date: translateDate("10. juli 2025."),
+      category: t('news.categories.enrollment'),
       image: "/images/fit4.jpg",
-      description: "Objavljujemo konačnu rang listu za upis primljenih kandidata u prvu godinu I ciklusa studija.",
-      fullContent: "Objavljujemo konačnu rang listu za upis primljenih kandidata u prvu godinu I ciklusa studija u akademskoj 2025/2026 godini. Rang lista je dostupna na našoj web stranici i u prostorijama fakulteta.",
-      author: "FIT Mostar",
-      readTime: "3 min"
+      description: t('news.items.rankListExcerpt'),
+      fullContent: t('news.items.rankListExcerpt') + " Rang lista je dostupna na našoj web stranici i u prostorijama fakulteta.",
+      author: "FIT Mostar"
     },
     {
-      title: "Konkurs za izbor saradnika u zvanje asistent",
-      date: "13. januar 2025.",
-      category: "Konkurs",
+      title: t('news.items.assistantTitle'),
+      date: translateDate("13. januar 2025."),
+      category: t('news.categories.competition'),
       image: "/images/fit3.jpg",
-      description: "Objavljujemo konkurs za izbor saradnika u zvanje asistent na našem fakultetu.",
-      fullContent: "Objavljujemo konkurs za izbor saradnika u zvanje asistent na Fakultetu informacijskih tehnologija. Konkurs je otvoren za sve zainteresovane kandidate koji ispunjavaju uslove iz konkursne dokumentacije.",
-      author: "FIT Mostar",
-      readTime: "4 min"
+      description: t('news.items.assistantExcerpt'),
+      fullContent: t('news.items.assistantExcerpt') + " Konkurs je otvoren za sve zainteresovane kandidate koji ispunjavaju uslove iz konkursne dokumentacije.",
+      author: "FIT Mostar"
     }
   ];
 
@@ -83,13 +98,13 @@ const VijestiPage = () => {
               className="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm text-white rounded-full text-sm font-medium mb-6"
             >
               <Tag className="w-4 h-4 mr-2" />
-              Vijesti i obavještenja
+              {t('newsPage.badge')}
             </motion.div>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Vijesti
+              {t('newsPage.title')}
             </h1>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-              Pratite najnovije obavještenja, događaje i dostignuća našeg fakulteta
+              {t('newsPage.subtitle')}
             </p>
           </motion.div>
         </div>
@@ -133,13 +148,6 @@ const VijestiPage = () => {
                         <span className="text-xs font-medium">{news.author}</span>
                       </>
                     )}
-                    {news.readTime && (
-                      <>
-                        <span className="mx-2">•</span>
-                        <Clock className="w-3 h-3 mr-2" />
-                        <span className="text-xs font-medium">{news.readTime}</span>
-                      </>
-                    )}
                   </div>
                   <h3 className="text-lg font-bold text-gray-900 mb-3 leading-tight group-hover:text-blue-600 transition-colors">
                     {news.title}
@@ -152,7 +160,7 @@ const VijestiPage = () => {
                     whileTap={{ scale: 0.95 }}
                     className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium text-sm group"
                   >
-                    Pročitaj više
+                    {t('common.readMore')}
                     <ArrowRight className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                   </motion.div>
                 </div>
@@ -217,12 +225,6 @@ const VijestiPage = () => {
                             <span className="text-sm font-medium">{selectedNews.author}</span>
                           </div>
                         )}
-                        {selectedNews.readTime && (
-                          <div className="flex items-center">
-                            <Clock className="w-4 h-4 mr-2" />
-                            <span className="text-sm font-medium">{selectedNews.readTime}</span>
-                          </div>
-                        )}
                       </div>
 
                       <Dialog.Title
@@ -243,7 +245,7 @@ const VijestiPage = () => {
                           className="inline-flex justify-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           onClick={() => setIsModalOpen(false)}
                         >
-                          Zatvori
+                          {t('common.close')}
                         </motion.button>
                       </div>
                     </>

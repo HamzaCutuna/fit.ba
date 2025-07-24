@@ -4,33 +4,35 @@ import { motion } from 'framer-motion';
 import { Download, Users, TrendingUp, BookOpen, Target, Award } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { useTranslation } from '../../../contexts/LanguageContext';
 
 const StaUpisatiPage = () => {
+  const { t } = useTranslation();
   const features = [
     {
       icon: TrendingUp,
-      title: "95% zaposlenost",
-      description: "Prema podacima Zavoda za statistiku, 95% naših studenata je zaposleno"
+      title: t('upis.staUpisati.employment'),
+      description: t('upis.staUpisati.employmentDesc')
     },
     {
       icon: Users,
-      title: "Dinamičan razvoj",
-      description: "IT sektor se dinamično razvija sa stalnom potrebom za kadrom"
+      title: t('upis.staUpisati.dynamicDevelopment'),
+      description: t('upis.staUpisati.dynamicDevelopmentDesc')
     },
     {
       icon: BookOpen,
-      title: "Kvalitetan program",
-      description: "Kontinuirano unapređenje nastavnog plana i programa"
+      title: t('upis.staUpisati.qualityProgram'),
+      description: t('upis.staUpisati.qualityProgramDesc')
     },
     {
       icon: Target,
-      title: "Tržišna usklađenost",
-      description: "Periodična istraživanja usklađenosti sa potrebama tržišta"
+      title: t('upis.staUpisati.marketAlignment'),
+      description: t('upis.staUpisati.marketAlignmentDesc')
     },
     {
       icon: Award,
-      title: "Dobra saradnja",
-      description: "Saradnja sa ministarstvima i regionalnim IT kompanijama"
+      title: t('upis.staUpisati.goodCooperation'),
+      description: t('upis.staUpisati.goodCooperationDesc')
     }
   ];
 
@@ -49,10 +51,10 @@ const StaUpisatiPage = () => {
             className="text-center"
           >
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Šta upisati?
+              {t('upis.staUpisati.title')}
             </h1>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-              Fakultet informacijskih tehnologija - mjesto gdje se stvara budućnost digitalnog svijeta
+              {t('upis.staUpisati.subtitle')}
             </p>
           </motion.div>
         </div>
@@ -69,16 +71,16 @@ const StaUpisatiPage = () => {
             className="mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
-              Zašto?
+              {t('upis.staUpisati.whyTitle')}
             </h2>
             
             <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
               <p className="text-lg mb-6">
-                Kvalitet i praktična relevantnost studijskog programa potvrđeni su činjenicom da je, prema podacima Zavoda za statistiku, <strong>95% naših studenata zaposleno</strong>. IT sektor predstavlja područje koje se dinamično razvija i postoji stalna potreba za ovim kadrom u Bosni i Hercegovini i u svijetu.
+                {t('upis.staUpisati.whyDescription1')}
               </p>
               
               <p className="text-lg mb-6">
-                FIT provodi periodična istraživanja u cilju analize usklađenosti kvalifikacija i vještina predviđenih nastavnim planom i programom sa potrebama i zahtjevima tržišta i okruženja. FIT ima veoma dobru saradnju sa državnim, federalnim i kantonalnim ministarstvima koja djeluju u sektoru obrazovanja i IT-a, kao i sa regionalnim IT kompanijama.
+                {t('upis.staUpisati.whyDescription2')}
               </p>
             </div>
           </motion.div>
@@ -121,14 +123,14 @@ const StaUpisatiPage = () => {
             className="bg-white rounded-2xl shadow-xl p-8 mb-16"
           >
             <h3 className="text-2xl font-bold text-gray-900 mb-6">
-              Kontinuirano unapređenje
+              {t('upis.staUpisati.continuousImprovement')}
             </h3>
             <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              Fakultet kontinuirano radi na unapređenju kvaliteta svih aktivnosti: nastave, sadržaja nastavnog plana i programa, sistema ocjenjivanja, udžbenika i literature, opremljenosti učioničkog i drugog prostora, DL platforme, naučno-istraživačke djelatnosti, izdavačke djelatnosti, selekcije nastavnog kadra i administrativnog osoblja, bibliotečke djelatnosti, cjeloživotnog obrazovanja i drugih standarda.
+              {t('upis.staUpisati.continuousImprovementDesc')}
             </p>
             <div className="text-center">
               <p className="text-xl font-semibold text-blue-600 mb-4">
-                Naša vizija budućnosti je sigurna i pozitivna. Pridružite nam se!
+                {t('upis.staUpisati.visionMessage')}
               </p>
             </div>
           </motion.div>
@@ -142,16 +144,16 @@ const StaUpisatiPage = () => {
           >
             <div className="text-center mb-6">
               <h3 className="text-2xl font-bold mb-4">
-                FIT Informator
+                {t('upis.staUpisati.informatorTitle')}
               </h3>
               <p className="text-lg text-blue-100 leading-relaxed">
-                FIT informator je priručnik namijenjen brucošima Fakulteta informacijskih tehnologija &quot;Džemal Bijedić&quot; u Mostaru koji sadrži odgovore na najčešće postavljena pitanja.
+                {t('upis.staUpisati.informatorDescription')}
               </p>
             </div>
             
             <div className="text-center mb-6">
               <p className="text-blue-100 mb-4">
-                Cilj informatora je olakšati snalaženje u novom akademskom okruženju i pružiti podršku na početku studiranja. Informator su napravili <strong>Adna Ćušić</strong> i <strong>Dino Burić</strong>.
+                {t('upis.staUpisati.informatorPurpose')}
               </p>
             </div>
 
@@ -166,7 +168,7 @@ const StaUpisatiPage = () => {
                 className="inline-flex items-center px-8 py-4 bg-white text-blue-600 font-semibold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group"
               >
                 <Download className="w-5 h-5 mr-2 group-hover:animate-bounce" />
-                Preuzmi Informator
+                {t('upis.staUpisati.downloadInformator')}
               </a>
             </motion.div>
           </motion.div>

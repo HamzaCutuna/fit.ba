@@ -4,8 +4,10 @@ import { motion } from 'framer-motion';
 import { Clock, User, Calendar, MapPin } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { useTranslation } from '../../../contexts/LanguageContext';
 
 const TerminiKonsultacijaPage = () => {
+  const { t } = useTranslation();
   const facultyMembers = [
     {
       name: "dr.sc. Nina Bijedić",
@@ -111,6 +113,16 @@ const TerminiKonsultacijaPage = () => {
     }
   ];
 
+  const translateDay = (dayStr: string) => {
+    return dayStr
+      .replace(/ponedjeljak/g, t('studij.termini-konsultacija.days.monday'))
+      .replace(/utorak/g, t('studij.termini-konsultacija.days.tuesday'))
+      .replace(/srijeda/g, t('studij.termini-konsultacija.days.wednesday'))
+      .replace(/četvrtak/g, t('studij.termini-konsultacija.days.thursday'))
+      .replace(/petak/g, t('studij.termini-konsultacija.days.friday'))
+      .replace(/svaki radni dan/g, t('studij.termini-konsultacija.days.workingDays'));
+  };
+
   const getDayColor = (day: string) => {
     const dayColors: { [key: string]: string } = {
       'ponedjeljak': 'bg-red-100 text-red-800',
@@ -144,10 +156,10 @@ const TerminiKonsultacijaPage = () => {
             className="text-center"
           >
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Termini konsultacija
+              {t('studij.termini-konsultacija.title')}
             </h1>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-              Raspored konsultacija sa nastavnim osobljem
+              {t('studij.termini-konsultacija.subtitle')}
             </p>
           </motion.div>
         </div>
@@ -191,7 +203,7 @@ const TerminiKonsultacijaPage = () => {
                   <div className="flex items-center mb-3">
                     <Clock className="w-4 h-4 text-blue-600 mr-2" />
                     <span className="text-sm font-medium text-gray-700">
-                      Raspored konsultacija:
+                      {t('studij.termini-konsultacija.scheduleLabel')}
                     </span>
                   </div>
                   
@@ -200,7 +212,7 @@ const TerminiKonsultacijaPage = () => {
                       key={timeIndex}
                       className={`px-3 py-2 rounded-lg text-sm font-medium ${getDayColor(timeSlot)}`}
                     >
-                      {timeSlot}
+                      {translateDay(timeSlot)}
                     </div>
                   ))}
                 </div>
@@ -209,7 +221,7 @@ const TerminiKonsultacijaPage = () => {
                 <div className="mt-4 pt-4 border-t border-gray-100">
                   <div className="flex items-center text-sm text-gray-600">
                     <MapPin className="w-4 h-4 mr-2" />
-                    <span>Fakultet informacijskih tehnologija</span>
+                    <span>{t('studij.termini-konsultacija.facultyLocation')}</span>
                   </div>
                 </div>
               </motion.div>
@@ -226,20 +238,20 @@ const TerminiKonsultacijaPage = () => {
             <div className="text-center">
               <Calendar className="w-12 h-12 mx-auto mb-4 text-blue-200" />
               <h3 className="text-2xl font-bold mb-4">
-                Važne napomene
+                {t('studij.termini-konsultacija.importantNotes')}
               </h3>
               <div className="max-w-3xl mx-auto space-y-4 text-blue-100">
                 <p className="leading-relaxed">
-                  • Konsultacije se održavaju u radnim danima prema rasporedu
+                  {t('studij.termini-konsultacija.note1')}
                 </p>
                 <p className="leading-relaxed">
-                  • Molimo poštujte termine i najavite se unaprijed ako je potrebno
+                  {t('studij.termini-konsultacija.note2')}
                 </p>
                 <p className="leading-relaxed">
-                  • U slučaju izmjene termina, nastavnici će vas obavijestiti
+                  {t('studij.termini-konsultacija.note3')}
                 </p>
                 <p className="leading-relaxed">
-                  • Konsultacije su dostupne i online prema dogovoru
+                  {t('studij.termini-konsultacija.note4')}
                 </p>
               </div>
             </div>
