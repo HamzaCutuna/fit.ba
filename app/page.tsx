@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Fakultet informacijskih tehnologija Mostar | Početna',
     description: 'Dobrodošli na Fakultet informacijskih tehnologija u Mostaru. Studij programi i informacije o upisu.',
-    images: ['/images/fit1.png'],
+    images: ['/images/og-image.png'],
   },
   alternates: {
     canonical: 'https://fit.ba/',

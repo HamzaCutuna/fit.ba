@@ -63,10 +63,10 @@ export const metadata: Metadata = {
     description: 'Fakultet informacijskih tehnologija u Mostaru - studij programi, upis, konsultacije',
     images: [
       {
-        url: '/images/logo.png',
+        url: '/images/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Fakultet informacijskih tehnologija Mostar',
+        alt: 'Open Graph image for Fakultet informacijskih tehnologija Mostar',
       },
     ],
   },
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Fakultet informacijskih tehnologija Mostar | FIT',
     description: 'Fakultet informacijskih tehnologija u Mostaru - studij programi, upis, konsultacije',
-    images: ['/images/logo.png'],
+    images: ['/images/og-image.png'],
   },
   robots: {
     index: true,
